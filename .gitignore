@@ -1,11 +1,10 @@
-[Bb]in/Debug/jade.exe
-[Bb]in/Debug/jade.application
-[Bb]in/Debug/jade.exe.manifest
-[Bb]in/Debug/jade.pdf
-[Bb]in/Debug/aa/
-[Oo]bj/
-bin/Debug/aa/jade.resources.dll
+bin/Debug/*
+!bin/Debug/CR_Reports/
+!bin/Debug/Data/
+!bin/Debug/Images/
+!bin/Debug/Themes/
 
+[Oo]bj/
 
 # Files built by Visual Studio
 *_i.c
