@@ -775,7 +775,7 @@
 
     Private Sub tsbSave_Click(sender As System.Object, e As System.EventArgs) Handles tsbSave.Click
         If txtVCECode.Text = "" Then
-            Msg("Please enter VCECode!", MsgBoxStyle.Exclamation)
+            Msg("Please enter VCECode and VCEName!", MsgBoxStyle.Exclamation)
         ElseIf txtRemarks.Text = "" Then
             MsgBox("Please enter a remark/short explanation", MsgBoxStyle.Exclamation)
         ElseIf txtTotalDebit.Text <> txtTotalCredit.Text Then
