@@ -183,18 +183,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="jade.exe" size="67570688">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="jade.exe" size="67571200">
       <assemblyIdentity name="jade" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-<<<<<<< HEAD
-        <dsig:DigestValue>y60LdgcPIL3z423m/TelGKv5hsU=</dsig:DigestValue>
-=======
-        <dsig:DigestValue>FmEj8lqvfh7Z/2rM7rubBliBvF8=</dsig:DigestValue>
->>>>>>> ef67863b9d317e59dac78ca48abdb234e7ce80c0
+        <dsig:DigestValue>k/D73Fug6NYAT6CclwVvLH/fIOo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -206,11 +202,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-<<<<<<< HEAD
-        <dsig:DigestValue>2q67lhilc7AP7EWwY3caLopCXOs=</dsig:DigestValue>
-=======
-        <dsig:DigestValue>5WsUPG1oBqXwESFneFmqXflLSpM=</dsig:DigestValue>
->>>>>>> ef67863b9d317e59dac78ca48abdb234e7ce80c0
+        <dsig:DigestValue>6olussBRVfL8rrTDnmHY9W8W0Ns=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
