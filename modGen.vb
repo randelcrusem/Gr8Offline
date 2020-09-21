@@ -13,6 +13,7 @@ Module modGen
     Public AlphaCmd As OleDbCommand
     Public AlphaReader As OleDbDataReader
     Public AlphaCon As OleDbConnection
+    Public WorkFactor As Integer = 12
 
     Public Sub AlphaConnect()
         AlphaCon = New OleDbConnection With {.ConnectionString = ("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\Alpha.accdb;Jet OLEDB:Database Password=@dm1nEvo;")}

@@ -153,6 +153,8 @@
 
     Protected Sub SaveUser()
         Try
+            ' HASH PASSWORD
+            Dim hash As String = BCrypt.Net.BCrypt.HashPassword(txtPassword.Text, WorkFactor)
             activityStatus = True
             Dim insertSQL As String
             insertSQL = " INSERT INTO " & _
@@ -160,7 +162,7 @@
                   " VALUES (@UserName, @LoginName, @Password, @UserLevel, @RefID, @EmailAddress, @ContactNo, @WhoCreated)"
             SQL.AddParam("@UserName", txtName.Text)
             SQL.AddParam("@LoginName", txtUsername.Text)
-            SQL.AddParam("@Password", txtPassword.Text)
+            SQL.AddParam("@Password", hash)
             SQL.AddParam("@UserLevel", cbUserLevel.SelectedItem)
             SQL.AddParam("@RefID", txtID.Text)
             SQL.AddParam("@EmailAddress", txtEmail.Text)
@@ -180,6 +182,7 @@
     Protected Sub UpdateUser()
         Try
             activityStatus = True
+            Dim hash As String = BCrypt.Net.BCrypt.HashPassword(txtPassword.Text, WorkFactor)
             Dim updateSQL As String
             updateSQL = " UPDATE tblUser " & _
                         " SET    UserName = @UserName, LoginName = @LoginName, Password = @Password, FirstLogin = @FirstLogin, " & _
@@ -189,7 +192,7 @@
             SQL.AddParam("@UserID", User_ID)
             SQL.AddParam("@UserName", txtName.Text)
             SQL.AddParam("@LoginName", txtUsername.Text)
-            SQL.AddParam("@Password", txtPassword.Text)
+            SQL.AddParam("@Password", hash)
             SQL.AddParam("@FirstLogin", True)
             SQL.AddParam("@UserLevel", cbUserLevel.SelectedItem)
             SQL.AddParam("@RefID", txtID.Text)
