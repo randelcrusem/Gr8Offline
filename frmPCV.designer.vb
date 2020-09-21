@@ -33,16 +33,6 @@ Partial Class frmPCV
         Me.txtTotalCredit = New System.Windows.Forms.TextBox()
         Me.dtpDocDate = New System.Windows.Forms.DateTimePicker()
         Me.dgvEntry = New System.Windows.Forms.DataGridView()
-        Me.dgcBranchCode = New System.Windows.Forms.DataGridViewComboBoxColumn()
-        Me.chAccntCode = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.chAccntTitle = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.chDebit = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.chCredit = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.chVCECode = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.chVCEName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.chParticulars = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.chRef = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column12 = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.txtRemarks = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
@@ -98,6 +88,18 @@ Partial Class frmPCV
         Me.tsbExit = New System.Windows.Forms.ToolStripButton()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.dgcBranchCode = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.chAccntCode = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.chAccntTitle = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.chDebit = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.chCredit = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.chVCECode = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.chVCEName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.chParticulars = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.chRef = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.chCostID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.chCostCenter = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.Column12 = New System.Windows.Forms.DataGridViewButtonColumn()
         CType(Me.dgvEntry, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbPayee.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
@@ -164,83 +166,12 @@ Partial Class frmPCV
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgvEntry.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvEntry.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgcBranchCode, Me.chAccntCode, Me.chAccntTitle, Me.chDebit, Me.chCredit, Me.chVCECode, Me.chVCEName, Me.chParticulars, Me.chRef, Me.Column12})
+        Me.dgvEntry.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgcBranchCode, Me.chAccntCode, Me.chAccntTitle, Me.chDebit, Me.chCredit, Me.chVCECode, Me.chVCEName, Me.chParticulars, Me.chRef, Me.chCostID, Me.chCostCenter, Me.Column12})
         Me.dgvEntry.Location = New System.Drawing.Point(3, 2)
         Me.dgvEntry.Name = "dgvEntry"
         Me.dgvEntry.RowHeadersWidth = 25
         Me.dgvEntry.Size = New System.Drawing.Size(1064, 205)
         Me.dgvEntry.TabIndex = 21
-        '
-        'dgcBranchCode
-        '
-        Me.dgcBranchCode.HeaderText = "Branch Code"
-        Me.dgcBranchCode.Name = "dgcBranchCode"
-        Me.dgcBranchCode.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgcBranchCode.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.dgcBranchCode.Width = 50
-        '
-        'chAccntCode
-        '
-        Me.chAccntCode.HeaderText = "Account Code"
-        Me.chAccntCode.Name = "chAccntCode"
-        '
-        'chAccntTitle
-        '
-        Me.chAccntTitle.HeaderText = "Account Title"
-        Me.chAccntTitle.Name = "chAccntTitle"
-        Me.chAccntTitle.Width = 250
-        '
-        'chDebit
-        '
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle1.Format = "999,999,999.00"
-        DataGridViewCellStyle1.NullValue = "0.00"
-        Me.chDebit.DefaultCellStyle = DataGridViewCellStyle1
-        Me.chDebit.HeaderText = "Debit"
-        Me.chDebit.Name = "chDebit"
-        '
-        'chCredit
-        '
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle2.Format = "999,999,999.00"
-        DataGridViewCellStyle2.NullValue = "0.00"
-        Me.chCredit.DefaultCellStyle = DataGridViewCellStyle2
-        Me.chCredit.HeaderText = "Credit"
-        Me.chCredit.Name = "chCredit"
-        '
-        'chVCECode
-        '
-        Me.chVCECode.HeaderText = "VCECode"
-        Me.chVCECode.Name = "chVCECode"
-        Me.chVCECode.Width = 80
-        '
-        'chVCEName
-        '
-        Me.chVCEName.HeaderText = "VCEName"
-        Me.chVCEName.Name = "chVCEName"
-        Me.chVCEName.Width = 160
-        '
-        'chParticulars
-        '
-        Me.chParticulars.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomRight
-        Me.chParticulars.DefaultCellStyle = DataGridViewCellStyle3
-        Me.chParticulars.HeaderText = "Particulars"
-        Me.chParticulars.Name = "chParticulars"
-        Me.chParticulars.Width = 74
-        '
-        'chRef
-        '
-        Me.chRef.HeaderText = "RefNo"
-        Me.chRef.Name = "chRef"
-        '
-        'Column12
-        '
-        Me.Column12.HeaderText = ">>"
-        Me.Column12.Name = "Column12"
-        Me.Column12.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Column12.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.Column12.Width = 50
         '
         'txtRemarks
         '
@@ -825,6 +756,88 @@ Partial Class frmPCV
         Me.TabPage1.Text = "Entries"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
+        'dgcBranchCode
+        '
+        Me.dgcBranchCode.HeaderText = "Branch Code"
+        Me.dgcBranchCode.Name = "dgcBranchCode"
+        Me.dgcBranchCode.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgcBranchCode.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.dgcBranchCode.Width = 50
+        '
+        'chAccntCode
+        '
+        Me.chAccntCode.HeaderText = "Account Code"
+        Me.chAccntCode.Name = "chAccntCode"
+        '
+        'chAccntTitle
+        '
+        Me.chAccntTitle.HeaderText = "Account Title"
+        Me.chAccntTitle.Name = "chAccntTitle"
+        Me.chAccntTitle.Width = 250
+        '
+        'chDebit
+        '
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle1.Format = "999,999,999.00"
+        DataGridViewCellStyle1.NullValue = "0.00"
+        Me.chDebit.DefaultCellStyle = DataGridViewCellStyle1
+        Me.chDebit.HeaderText = "Debit"
+        Me.chDebit.Name = "chDebit"
+        '
+        'chCredit
+        '
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle2.Format = "999,999,999.00"
+        DataGridViewCellStyle2.NullValue = "0.00"
+        Me.chCredit.DefaultCellStyle = DataGridViewCellStyle2
+        Me.chCredit.HeaderText = "Credit"
+        Me.chCredit.Name = "chCredit"
+        '
+        'chVCECode
+        '
+        Me.chVCECode.HeaderText = "VCECode"
+        Me.chVCECode.Name = "chVCECode"
+        Me.chVCECode.Width = 80
+        '
+        'chVCEName
+        '
+        Me.chVCEName.HeaderText = "VCEName"
+        Me.chVCEName.Name = "chVCEName"
+        Me.chVCEName.Width = 160
+        '
+        'chParticulars
+        '
+        Me.chParticulars.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomRight
+        Me.chParticulars.DefaultCellStyle = DataGridViewCellStyle3
+        Me.chParticulars.HeaderText = "Particulars"
+        Me.chParticulars.Name = "chParticulars"
+        Me.chParticulars.Width = 74
+        '
+        'chRef
+        '
+        Me.chRef.HeaderText = "RefNo"
+        Me.chRef.Name = "chRef"
+        '
+        'chCostID
+        '
+        Me.chCostID.HeaderText = "Cost ID"
+        Me.chCostID.Name = "chCostID"
+        Me.chCostID.Visible = False
+        '
+        'chCostCenter
+        '
+        Me.chCostCenter.HeaderText = "Cost Center"
+        Me.chCostCenter.Name = "chCostCenter"
+        '
+        'Column12
+        '
+        Me.Column12.HeaderText = ">>"
+        Me.Column12.Name = "Column12"
+        Me.Column12.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Column12.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.Column12.Width = 50
+        '
         'frmPCV
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -911,16 +924,6 @@ Partial Class frmPCV
     Friend WithEvents Label16 As System.Windows.Forms.Label
     Friend WithEvents txtRFPRef As System.Windows.Forms.TextBox
     Friend WithEvents Label17 As System.Windows.Forms.Label
-    Friend WithEvents dgcBranchCode As System.Windows.Forms.DataGridViewComboBoxColumn
-    Friend WithEvents chAccntCode As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents chAccntTitle As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents chDebit As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents chCredit As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents chVCECode As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents chVCEName As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents chParticulars As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents chRef As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column12 As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents txtLoanRef As System.Windows.Forms.TextBox
     Friend WithEvents Label31 As System.Windows.Forms.Label
     Friend WithEvents tsbDelete As System.Windows.Forms.ToolStripButton
@@ -931,4 +934,16 @@ Partial Class frmPCV
     Friend WithEvents tsbCopy As System.Windows.Forms.ToolStripDropDownButton
     Friend WithEvents FromLoanToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripSeparator4 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents dgcBranchCode As System.Windows.Forms.DataGridViewComboBoxColumn
+    Friend WithEvents chAccntCode As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents chAccntTitle As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents chDebit As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents chCredit As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents chVCECode As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents chVCEName As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents chParticulars As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents chRef As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents chCostID As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents chCostCenter As System.Windows.Forms.DataGridViewComboBoxColumn
+    Friend WithEvents Column12 As System.Windows.Forms.DataGridViewButtonColumn
 End Class

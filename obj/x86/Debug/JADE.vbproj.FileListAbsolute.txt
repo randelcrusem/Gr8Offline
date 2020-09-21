@@ -2409,7 +2409,6 @@ D:\NewFolder\Gr8Offline\bin\Debug\Microsoft.Vbe.Interop.dll
 D:\NewFolder\Gr8Offline\bin\Debug\Microsoft.Office.Interop.Excel.xml
 D:\NewFolder\Gr8Offline\bin\Debug\Microsoft.Office.Interop.Outlook.xml
 D:\NewFolder\Gr8Offline\bin\Debug\office.xml
-D:\NewFolder\Gr8Offline\obj\x86\Debug\JADE.vbprojResolveAssemblyReference.cache
 D:\NewFolder\Gr8Offline\obj\x86\Debug\JADE.vbproj.ResolveComReference.cache
 D:\NewFolder\Gr8Offline\obj\x86\Debug\jade.frmAdvances.resources
 D:\NewFolder\Gr8Offline\obj\x86\Debug\jade.frmBI.resources
@@ -2550,3 +2549,4 @@ D:\NewFolder\Gr8Offline\obj\x86\Debug\jade.application
 D:\NewFolder\Gr8Offline\obj\x86\Debug\jade.exe
 D:\NewFolder\Gr8Offline\obj\x86\Debug\jade.xml
 D:\NewFolder\Gr8Offline\obj\x86\Debug\jade.pdb
+D:\NewFolder\Gr8Offline\obj\x86\Debug\JADE.vbprojResolveAssemblyReference.cache

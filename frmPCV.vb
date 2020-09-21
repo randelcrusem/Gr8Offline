@@ -109,6 +109,16 @@
             txtTransNum.Enabled = Value
         End If
     End Sub
+    Dim eColIndex As Integer = 0
+    Private Sub dgvEntry_CellBeginEdit(sender As Object, e As System.Windows.Forms.DataGridViewCellCancelEventArgs) Handles dgvEntry.CellBeginEdit
+        eColIndex = e.ColumnIndex
+    End Sub
+
+    Private Sub dgvEntry_CurrentCellDirtyStateChanged(sender As Object, e As System.EventArgs) Handles dgvEntry.CurrentCellDirtyStateChanged
+        If eColIndex = chCostCenter.Index And TypeOf (dgvEntry.CurrentRow.Cells(chCostCenter.Index)) Is DataGridViewComboBoxCell Then
+            dgvEntry.EndEdit()
+        End If
+    End Sub
 
     Private Sub dgvEntry_DataError(sender As System.Object, e As System.Windows.Forms.DataGridViewDataErrorEventArgs) Handles dgvEntry.DataError
         Try
@@ -193,21 +203,49 @@
 
     Private Sub LoadEntry(ByVal PCVNo As Integer)
         Dim query As String
-        query = " SELECT ID, JE_No, View_GL.BranchCode, View_GL.AccntCode, AccountTitle, View_GL.VCECode, View_GL.VCEName, Debit, Credit, Particulars, RefNo   " & _
+        query = " SELECT ID, JE_No, View_GL.BranchCode, View_GL.AccntCode, AccountTitle, View_GL.VCECode, View_GL.VCEName, Debit, Credit, Particulars, RefNo, CostCenter   " & _
                 " FROM   View_GL INNER JOIN tblCOA_Master " & _
                 " ON     View_GL.AccntCode = tblCOA_Master.AccountCode " & _
                 " WHERE JE_No = (SELECT  JE_No FROM tblJE_Header WHERE RefType = 'PCV' AND RefTransID = " & PCVNo & ") " & _
                 " ORDER BY LineNumber "
         SQL.ReadQuery(query)
         dgvEntry.Rows.Clear()
-        While SQL.SQLDR.Read
-            JETransiD = SQL.SQLDR("JE_No")
-            dgvEntry.Rows.Add(SQL.SQLDR("BranchCode").ToString, SQL.SQLDR("AccntCode").ToString, SQL.SQLDR("AccountTitle").ToString, CDec(SQL.SQLDR("Debit")).ToString("N2"), _
-                               CDec(SQL.SQLDR("Credit")).ToString("N2"), SQL.SQLDR("VCECode").ToString, SQL.SQLDR("VCEName").ToString, _
-                               SQL.SQLDR("Particulars").ToString, SQL.SQLDR("RefNo").ToString)
-        End While
-        LoadBranch()
-        TotalDBCR()
+        Dim rowsCount As Integer = 0
+        If SQL.SQLDR.HasRows Then
+
+            While SQL.SQLDR.Read
+
+                JETransiD = SQL.SQLDR("JE_No").ToString
+                dgvEntry.Rows.Add(SQL.SQLDR("BranchCode").ToString)
+                dgvEntry.Rows(rowsCount).Cells(chAccntCode.Index).Value = SQL.SQLDR("AccntCode").ToString
+                dgvEntry.Rows(rowsCount).Cells(chAccntTitle.Index).Value = SQL.SQLDR("AccountTitle").ToString
+                dgvEntry.Rows(rowsCount).Cells(chDebit.Index).Value = CDec(SQL.SQLDR("Debit")).ToString("N2")
+                dgvEntry.Rows(rowsCount).Cells(chCredit.Index).Value = CDec(SQL.SQLDR("Credit")).ToString("N2")
+                dgvEntry.Rows(rowsCount).Cells(chVCECode.Index).Value = SQL.SQLDR("VCECode").ToString
+                dgvEntry.Rows(rowsCount).Cells(chVCEName.Index).Value = SQL.SQLDR("VCEName").ToString
+                dgvEntry.Rows(rowsCount).Cells(chParticulars.Index).Value = SQL.SQLDR("Particulars").ToString
+                dgvEntry.Rows(rowsCount).Cells(chRef.Index).Value = SQL.SQLDR("RefNo").ToString
+
+                'CostCenter
+                Dim strCCCode As String = SQL.SQLDR("CostCenter").ToString
+                Dim cbvCostCenter As DataGridViewComboBoxCell = LoadCostCenterGridView()
+                Dim strCostCenter As String = GetCCName(strCCCode)
+                If cbvCostCenter.Items.Contains(IIf(IsNothing(strCostCenter), "", strCostCenter)) Then
+                    cbvCostCenter.Value = strCostCenter
+                End If
+                dgvEntry.Rows(rowsCount).Cells(chCostCenter.Index) = cbvCostCenter
+                dgvEntry.Rows(rowsCount).Cells(chCostID.Index).Value = SQL.SQLDR("CostCenter").ToString
+
+
+                rowsCount += 1
+            End While
+
+            LoadBranch()
+            TotalDBCR()
+        Else
+            JETransiD = 0
+            dgvEntry.Rows.Clear()
+        End If
     End Sub
  
 
@@ -382,8 +420,8 @@
             For Each item As DataGridViewRow In dgvEntry.Rows
                 If item.Cells(chAccntCode.Index).Value <> Nothing Then
                     insertSQL = " INSERT INTO " & _
-                                " tblJE_Details(JE_No, AccntCode, VCECode, Debit, Credit, Particulars, RefNo, LineNumber, BranchCode) " & _
-                                " VALUES(@JE_No, @AccntCode, @VCECode, @Debit, @Credit, @Particulars, @RefNo, @LineNumber, @BranchCode)"
+                                " tblJE_Details(JE_No, AccntCode, VCECode, Debit, Credit, Particulars, RefNo, LineNumber, CostCenter, BranchCode) " & _
+                                " VALUES(@JE_No, @AccntCode, @VCECode, @Debit, @Credit, @Particulars, @RefNo, @LineNumber, @CostCenter, @BranchCode)"
                     SQL.FlushParams()
                     SQL.AddParam("@JE_No", JETransiD)
                     SQL.AddParam("@AccntCode", item.Cells(chAccntCode.Index).Value.ToString)
@@ -406,6 +444,11 @@
                         SQL.AddParam("@Particulars", item.Cells(chParticulars.Index).Value.ToString)
                     Else
                         SQL.AddParam("@Particulars", "")
+                    End If
+                    If item.Cells(chCostID.Index).Value <> Nothing AndAlso item.Cells(chCostID.Index).Value <> "" Then
+                        SQL.AddParam("@CostCenter", item.Cells(chCostID.Index).Value.ToString)
+                    Else
+                        SQL.AddParam("@CostCenter", "")
                     End If
                     If item.Cells(chRef.Index).Value <> Nothing AndAlso item.Cells(chRef.Index).Value <> "" Then
                         SQL.AddParam("@RefNo", item.Cells(chRef.Index).Value.ToString)
@@ -528,8 +571,8 @@
             For Each item As DataGridViewRow In dgvEntry.Rows
                 If item.Cells(chAccntCode.Index).Value <> Nothing Then
                     insertSQL = " INSERT INTO " & _
-                                " tblJE_Details(JE_No, AccntCode, VCECode, Debit, Credit, Particulars, RefNo, LineNumber, BranchCode) " & _
-                                " VALUES(@JE_No, @AccntCode, @VCECode, @Debit, @Credit, @Particulars, @RefNo, @LineNumber, @BranchCode)"
+                                " tblJE_Details(JE_No, AccntCode, VCECode, Debit, Credit, Particulars, RefNo, LineNumber, CostCenter, BranchCode) " & _
+                                " VALUES(@JE_No, @AccntCode, @VCECode, @Debit, @Credit, @Particulars, @RefNo, @LineNumber, @CostCenter, @BranchCode)"
                     SQL.FlushParams()
                     SQL.AddParam("@JE_No", JETransiD)
                     SQL.AddParam("@AccntCode", item.Cells(chAccntCode.Index).Value.ToString)
@@ -552,6 +595,11 @@
                         SQL.AddParam("@Particulars", item.Cells(chParticulars.Index).Value.ToString)
                     Else
                         SQL.AddParam("@Particulars", "")
+                    End If
+                    If item.Cells(chCostID.Index).Value <> Nothing AndAlso item.Cells(chCostID.Index).Value <> "" Then
+                        SQL.AddParam("@CostCenter", item.Cells(chCostID.Index).Value.ToString)
+                    Else
+                        SQL.AddParam("@CostCenter", "")
                     End If
                     If item.Cells(chRef.Index).Value <> Nothing AndAlso item.Cells(chRef.Index).Value <> "" Then
                         SQL.AddParam("@RefNo", item.Cells(chRef.Index).Value.ToString)
@@ -688,6 +736,18 @@
                     dgvEntry.Item(chDebit.Index, e.RowIndex).Selected = True
                 End If
                 f.Dispose()
+
+                'Auto Entry Grid View Cost Center
+                If IsNothing(dgvEntry.Item(chCostCenter.Index, e.RowIndex).Value) Then
+                    Dim cbvCostCenter As DataGridViewComboBoxCell = LoadCostCenterGridView()
+                    cbvCostCenter.Value = strDefaultGridView
+                    dgvEntry.Item(chCostCenter.Index, e.RowIndex) = cbvCostCenter
+
+                    Dim dgvCostCenter As String
+                    dgvCostCenter = dgvEntry.Rows(e.RowIndex).Cells(chCostCenter.Index).Value
+                    LoadCostCenterCode(dgvCostCenter, e.RowIndex, chCostCenter.Index, chCostID.Index)
+                End If
+
                 Dim strVCECode As String = ""
                 Dim strAccntCode As String = ""
                 strVCECode = txtVCECode.Text
@@ -717,7 +777,16 @@
             dgvEntry.Item(chVCEName.Index, e.RowIndex).Value = f.VCEName
             f.Dispose()
 
+            'Auto Entry Grid View Cost Center
+            If IsNothing(dgvEntry.Item(chCostCenter.Index, e.RowIndex).Value) Then
+                Dim cbvCostCenter As DataGridViewComboBoxCell = LoadCostCenterGridView()
+                cbvCostCenter.Value = strDefaultGridView
+                dgvEntry.Item(chCostCenter.Index, e.RowIndex) = cbvCostCenter
 
+                Dim dgvCostCenter As String
+                dgvCostCenter = dgvEntry.Rows(e.RowIndex).Cells(chCostCenter.Index).Value
+                LoadCostCenterCode(dgvCostCenter, e.RowIndex, chCostCenter.Index, chCostID.Index)
+            End If
 
             'Auto Entry RefNo
             Dim strVCECode As String = ""
@@ -762,7 +831,67 @@
                     dgvEntry.Item(chRef.Index, e.RowIndex + 1).Value = strRefNo
                 End If
             End If
+
+            'Auto Entry Grid View Cost Center
+            If IsNothing(dgvEntry.Item(chCostCenter.Index, e.RowIndex).Value) Then
+                Dim cbvCostCenter As DataGridViewComboBoxCell = LoadCostCenterGridView()
+                cbvCostCenter.Value = strDefaultGridView
+                dgvEntry.Item(chCostCenter.Index, e.RowIndex) = cbvCostCenter
+
+                Dim dgvCostCenter As String
+                dgvCostCenter = dgvEntry.Rows(e.RowIndex).Cells(chCostCenter.Index).Value
+                LoadCostCenterCode(dgvCostCenter, e.RowIndex, chCostCenter.Index, chCostID.Index)
+            End If
+        ElseIf e.ColumnIndex = chCostCenter.Index Then
+            Dim dgvCostCenter As String
+            dgvCostCenter = dgvEntry.Rows(e.RowIndex).Cells(chCostCenter.Index).Value
+            LoadCostCenterCode(dgvCostCenter, e.RowIndex, chCostCenter.Index, chCostID.Index)
         End If
+    End Sub
+
+
+    'Start of Cost Center insert to Table
+    Dim strDefaultGridView As String = ""
+    Dim strDefaultGridCode As String = ""
+    Public Function LoadCostCenterGridView()
+
+        Dim selectSQL As String = " SELECT Code, Description FROM tblCC"
+        SQL.ReadQuery(selectSQL, 2)
+
+        Dim cbvGridviewCell As New DataGridViewComboBoxCell
+
+        Dim count As Integer = 1
+        cbvGridviewCell.Items.Add("")
+
+        While SQL.SQLDR2.Read
+            If count = 1 Then
+                strDefaultGridCode = SQL.SQLDR2("Code").ToString
+                strDefaultGridView = SQL.SQLDR2("Description").ToString
+            End If
+            cbvGridviewCell.Items.Add(SQL.SQLDR2("Description").ToString)
+            count += 1
+        End While
+        strDefaultGridView = ""
+        Return cbvGridviewCell
+
+    End Function
+
+    Public Sub LoadCostCenterCode(ByVal CostCenter As String, ByVal RowIndex As Integer, ByVal CodeIndex As Integer, ByVal CostIndex As Integer)
+
+        Dim selectSQL As String
+        selectSQL = " SELECT Code, Description FROM tblCC WHERE Description = '" & CostCenter & "'"
+        SQL.ReadQuery(selectSQL, 2)
+
+        strDefaultGridView = ""
+        strDefaultGridCode = ""
+
+        While SQL.SQLDR2.Read
+            strDefaultGridView = SQL.SQLDR2("Description").ToString
+            strDefaultGridCode = SQL.SQLDR2("Code").ToString
+        End While
+        dgvEntry.Rows(RowIndex).Cells(CodeIndex).Value = strDefaultGridView
+        dgvEntry.Rows(RowIndex).Cells(CostIndex).Value = strDefaultGridCode
+
     End Sub
 
 

@@ -36,25 +36,27 @@ Partial Class frmCashAdvance
         Me.txtTransNum = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.txtStatus = New System.Windows.Forms.TextBox()
+        Me.btnSearchVCE = New System.Windows.Forms.Button()
         Me.txtVCEName = New System.Windows.Forms.TextBox()
         Me.txtVCECode = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.tsbSearch = New System.Windows.Forms.ToolStripButton()
         Me.tsbNew = New System.Windows.Forms.ToolStripButton()
         Me.tsbEdit = New System.Windows.Forms.ToolStripButton()
         Me.tsbSave = New System.Windows.Forms.ToolStripButton()
         Me.tsbCancel = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.tsbPrint = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.tsbPrevious = New System.Windows.Forms.ToolStripButton()
         Me.tsbNext = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.tsbClose = New System.Windows.Forms.ToolStripButton()
         Me.tsbExit = New System.Windows.Forms.ToolStripButton()
-        Me.btnSearchVCE = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.cbCostCenter = New System.Windows.Forms.ComboBox()
         Me.GroupBox1.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -62,17 +64,17 @@ Partial Class frmCashAdvance
         'txtRemarks
         '
         Me.txtRemarks.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtRemarks.Location = New System.Drawing.Point(126, 126)
+        Me.txtRemarks.Location = New System.Drawing.Point(126, 155)
         Me.txtRemarks.Multiline = True
         Me.txtRemarks.Name = "txtRemarks"
-        Me.txtRemarks.Size = New System.Drawing.Size(338, 51)
+        Me.txtRemarks.Size = New System.Drawing.Size(322, 51)
         Me.txtRemarks.TabIndex = 115
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(55, 129)
+        Me.Label2.Location = New System.Drawing.Point(55, 158)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(69, 16)
         Me.Label2.TabIndex = 1333
@@ -83,6 +85,8 @@ Partial Class frmCashAdvance
         Me.GroupBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.Controls.Add(Me.cbCostCenter)
         Me.GroupBox1.Controls.Add(Me.txtAmount)
         Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.Label14)
@@ -102,14 +106,14 @@ Partial Class frmCashAdvance
         Me.GroupBox1.Controls.Add(Me.Label9)
         Me.GroupBox1.Location = New System.Drawing.Point(8, 40)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(732, 189)
+        Me.GroupBox1.Size = New System.Drawing.Size(732, 212)
         Me.GroupBox1.TabIndex = 1340
         Me.GroupBox1.TabStop = False
         '
         'txtAmount
         '
         Me.txtAmount.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAmount.Location = New System.Drawing.Point(126, 98)
+        Me.txtAmount.Location = New System.Drawing.Point(126, 127)
         Me.txtAmount.Name = "txtAmount"
         Me.txtAmount.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.txtAmount.Size = New System.Drawing.Size(135, 22)
@@ -121,7 +125,7 @@ Partial Class frmCashAdvance
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(62, 103)
+        Me.Label7.Location = New System.Drawing.Point(62, 132)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(62, 16)
         Me.Label7.TabIndex = 1372
@@ -211,6 +215,16 @@ Partial Class frmCashAdvance
         Me.txtStatus.TabIndex = 1361
         Me.txtStatus.Text = "Open"
         '
+        'btnSearchVCE
+        '
+        Me.btnSearchVCE.BackgroundImage = Global.jade.My.Resources.Resources.view
+        Me.btnSearchVCE.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnSearchVCE.Location = New System.Drawing.Point(454, 13)
+        Me.btnSearchVCE.Name = "btnSearchVCE"
+        Me.btnSearchVCE.Size = New System.Drawing.Size(25, 25)
+        Me.btnSearchVCE.TabIndex = 1359
+        Me.btnSearchVCE.UseVisualStyleBackColor = True
+        '
         'txtVCEName
         '
         Me.txtVCEName.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -259,21 +273,6 @@ Partial Class frmCashAdvance
         Me.ToolStrip1.Size = New System.Drawing.Size(745, 40)
         Me.ToolStrip1.TabIndex = 1343
         Me.ToolStrip1.Text = "ToolStrip1"
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 40)
-        '
-        'ToolStripSeparator2
-        '
-        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 40)
-        '
-        'ToolStripSeparator3
-        '
-        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 40)
         '
         'tsbSearch
         '
@@ -333,6 +332,11 @@ Partial Class frmCashAdvance
         Me.tsbCancel.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.tsbCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 40)
+        '
         'tsbPrint
         '
         Me.tsbPrint.AutoSize = False
@@ -343,6 +347,11 @@ Partial Class frmCashAdvance
         Me.tsbPrint.Size = New System.Drawing.Size(50, 35)
         Me.tsbPrint.Text = "Print"
         Me.tsbPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'ToolStripSeparator2
+        '
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 40)
         '
         'tsbPrevious
         '
@@ -366,6 +375,11 @@ Partial Class frmCashAdvance
         Me.tsbNext.Text = "Next"
         Me.tsbNext.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
+        'ToolStripSeparator3
+        '
+        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 40)
+        '
         'tsbClose
         '
         Me.tsbClose.AutoSize = False
@@ -388,22 +402,32 @@ Partial Class frmCashAdvance
         Me.tsbExit.Text = "Exit"
         Me.tsbExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
-        'btnSearchVCE
+        'Label1
         '
-        Me.btnSearchVCE.BackgroundImage = Global.jade.My.Resources.Resources.view
-        Me.btnSearchVCE.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnSearchVCE.Location = New System.Drawing.Point(454, 13)
-        Me.btnSearchVCE.Name = "btnSearchVCE"
-        Me.btnSearchVCE.Size = New System.Drawing.Size(25, 25)
-        Me.btnSearchVCE.TabIndex = 1359
-        Me.btnSearchVCE.UseVisualStyleBackColor = True
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(39, 102)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(85, 16)
+        Me.Label1.TabIndex = 1377
+        Me.Label1.Text = "Cost Center :"
+        '
+        'cbCostCenter
+        '
+        Me.cbCostCenter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbCostCenter.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbCostCenter.FormattingEnabled = True
+        Me.cbCostCenter.Location = New System.Drawing.Point(126, 98)
+        Me.cbCostCenter.Name = "cbCostCenter"
+        Me.cbCostCenter.Size = New System.Drawing.Size(322, 24)
+        Me.cbCostCenter.TabIndex = 1376
         '
         'frmCashAdvance
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(745, 239)
+        Me.ClientSize = New System.Drawing.Size(745, 262)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
@@ -452,4 +476,6 @@ Partial Class frmCashAdvance
     Friend WithEvents cbDefAccount As System.Windows.Forms.ComboBox
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents txtAmount As System.Windows.Forms.TextBox
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents cbCostCenter As System.Windows.Forms.ComboBox
 End Class

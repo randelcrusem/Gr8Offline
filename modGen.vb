@@ -198,9 +198,9 @@ Module modGen
     Public Function GetCCName(ByVal CCCode As String) As String
         Dim query As String
         query = " SELECT Description FROM tblCC WHERE Code ='" & CCCode & "' "
-        SQL.ReadQuery(query)
-        If SQL.SQLDR.Read Then
-            Return SQL.SQLDR("Description").ToString
+        SQL.ReadQuery(query, 2)
+        If SQL.SQLDR2.Read Then
+            Return SQL.SQLDR2("Description").ToString
         Else
             Return ""
         End If

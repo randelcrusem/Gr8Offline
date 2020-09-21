@@ -32,19 +32,6 @@ Partial Class frmJV
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.dgvEntry = New System.Windows.Forms.DataGridView()
-        Me.chAccntCode = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.chAccntTitle = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.chDebit = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.chCredit = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.chParticulars = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.chVCECode = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.chVCEName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.chRefNo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.chCostID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.chCostCenter = New System.Windows.Forms.DataGridViewComboBoxColumn()
-        Me.chCIP_Code = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.chCIP_Desc = New System.Windows.Forms.DataGridViewComboBoxColumn()
-        Me.chBranchCode = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.txtDifference = New System.Windows.Forms.TextBox()
         Me.lblRemarks = New System.Windows.Forms.Label()
         Me.txtRemarks = New System.Windows.Forms.TextBox()
@@ -87,6 +74,19 @@ Partial Class frmJV
         Me.txtTransNum = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.txtStatus = New System.Windows.Forms.TextBox()
+        Me.chAccntCode = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.chAccntTitle = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.chDebit = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.chCredit = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.chParticulars = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.chVCECode = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.chVCEName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.chRefNo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.chCostID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.chCostCenter = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.chCIP_Code = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.chCIP_Desc = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.chBranchCode = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.dgvEntry, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -166,94 +166,6 @@ Partial Class frmJV
         Me.dgvEntry.Name = "dgvEntry"
         Me.dgvEntry.Size = New System.Drawing.Size(1125, 338)
         Me.dgvEntry.TabIndex = 1304
-        '
-        'chAccntCode
-        '
-        Me.chAccntCode.HeaderText = "Account Code"
-        Me.chAccntCode.Name = "chAccntCode"
-        Me.chAccntCode.Width = 120
-        '
-        'chAccntTitle
-        '
-        Me.chAccntTitle.HeaderText = "Account Title"
-        Me.chAccntTitle.Name = "chAccntTitle"
-        Me.chAccntTitle.Width = 250
-        '
-        'chDebit
-        '
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle1.Format = "999,999,999.00"
-        DataGridViewCellStyle1.NullValue = "0.00"
-        Me.chDebit.DefaultCellStyle = DataGridViewCellStyle1
-        Me.chDebit.HeaderText = "Debit"
-        Me.chDebit.Name = "chDebit"
-        '
-        'chCredit
-        '
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle2.Format = "999,999,999.00"
-        DataGridViewCellStyle2.NullValue = "0.00"
-        Me.chCredit.DefaultCellStyle = DataGridViewCellStyle2
-        Me.chCredit.HeaderText = "Credit"
-        Me.chCredit.Name = "chCredit"
-        '
-        'chParticulars
-        '
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomRight
-        Me.chParticulars.DefaultCellStyle = DataGridViewCellStyle3
-        Me.chParticulars.HeaderText = "Particulars"
-        Me.chParticulars.Name = "chParticulars"
-        '
-        'chVCECode
-        '
-        Me.chVCECode.HeaderText = "VCECode"
-        Me.chVCECode.Name = "chVCECode"
-        Me.chVCECode.Width = 80
-        '
-        'chVCEName
-        '
-        Me.chVCEName.HeaderText = "VCEName"
-        Me.chVCEName.Name = "chVCEName"
-        Me.chVCEName.Width = 200
-        '
-        'chRefNo
-        '
-        Me.chRefNo.HeaderText = "Reference ID"
-        Me.chRefNo.Name = "chRefNo"
-        Me.chRefNo.Width = 120
-        '
-        'chCostID
-        '
-        Me.chCostID.HeaderText = "Cost ID"
-        Me.chCostID.Name = "chCostID"
-        Me.chCostID.Visible = False
-        '
-        'chCostCenter
-        '
-        Me.chCostCenter.HeaderText = "Cost Center"
-        Me.chCostCenter.Name = "chCostCenter"
-        Me.chCostCenter.Visible = False
-        Me.chCostCenter.Width = 150
-        '
-        'chCIP_Code
-        '
-        Me.chCIP_Code.HeaderText = "CIP Code"
-        Me.chCIP_Code.Name = "chCIP_Code"
-        Me.chCIP_Code.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.chCIP_Code.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.chCIP_Code.Visible = False
-        '
-        'chCIP_Desc
-        '
-        Me.chCIP_Desc.HeaderText = "CIP Desc"
-        Me.chCIP_Desc.Name = "chCIP_Desc"
-        Me.chCIP_Desc.Visible = False
-        Me.chCIP_Desc.Width = 150
-        '
-        'chBranchCode
-        '
-        Me.chBranchCode.HeaderText = "BranchCode"
-        Me.chBranchCode.Name = "chBranchCode"
         '
         'txtDifference
         '
@@ -676,6 +588,93 @@ Partial Class frmJV
         Me.txtStatus.Size = New System.Drawing.Size(132, 22)
         Me.txtStatus.TabIndex = 1367
         Me.txtStatus.Text = "Open"
+        '
+        'chAccntCode
+        '
+        Me.chAccntCode.HeaderText = "Account Code"
+        Me.chAccntCode.Name = "chAccntCode"
+        Me.chAccntCode.Width = 120
+        '
+        'chAccntTitle
+        '
+        Me.chAccntTitle.HeaderText = "Account Title"
+        Me.chAccntTitle.Name = "chAccntTitle"
+        Me.chAccntTitle.Width = 250
+        '
+        'chDebit
+        '
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle1.Format = "999,999,999.00"
+        DataGridViewCellStyle1.NullValue = "0.00"
+        Me.chDebit.DefaultCellStyle = DataGridViewCellStyle1
+        Me.chDebit.HeaderText = "Debit"
+        Me.chDebit.Name = "chDebit"
+        '
+        'chCredit
+        '
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle2.Format = "999,999,999.00"
+        DataGridViewCellStyle2.NullValue = "0.00"
+        Me.chCredit.DefaultCellStyle = DataGridViewCellStyle2
+        Me.chCredit.HeaderText = "Credit"
+        Me.chCredit.Name = "chCredit"
+        '
+        'chParticulars
+        '
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomRight
+        Me.chParticulars.DefaultCellStyle = DataGridViewCellStyle3
+        Me.chParticulars.HeaderText = "Particulars"
+        Me.chParticulars.Name = "chParticulars"
+        '
+        'chVCECode
+        '
+        Me.chVCECode.HeaderText = "VCECode"
+        Me.chVCECode.Name = "chVCECode"
+        Me.chVCECode.Width = 80
+        '
+        'chVCEName
+        '
+        Me.chVCEName.HeaderText = "VCEName"
+        Me.chVCEName.Name = "chVCEName"
+        Me.chVCEName.Width = 200
+        '
+        'chRefNo
+        '
+        Me.chRefNo.HeaderText = "Reference ID"
+        Me.chRefNo.Name = "chRefNo"
+        Me.chRefNo.Width = 120
+        '
+        'chCostID
+        '
+        Me.chCostID.HeaderText = "Cost ID"
+        Me.chCostID.Name = "chCostID"
+        Me.chCostID.Visible = False
+        '
+        'chCostCenter
+        '
+        Me.chCostCenter.HeaderText = "Cost Center"
+        Me.chCostCenter.Name = "chCostCenter"
+        Me.chCostCenter.Width = 150
+        '
+        'chCIP_Code
+        '
+        Me.chCIP_Code.HeaderText = "CIP Code"
+        Me.chCIP_Code.Name = "chCIP_Code"
+        Me.chCIP_Code.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.chCIP_Code.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.chCIP_Code.Visible = False
+        '
+        'chCIP_Desc
+        '
+        Me.chCIP_Desc.HeaderText = "CIP Desc"
+        Me.chCIP_Desc.Name = "chCIP_Desc"
+        Me.chCIP_Desc.Visible = False
+        Me.chCIP_Desc.Width = 150
+        '
+        'chBranchCode
+        '
+        Me.chBranchCode.HeaderText = "BranchCode"
+        Me.chBranchCode.Name = "chBranchCode"
         '
         'frmJV
         '

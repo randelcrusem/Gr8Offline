@@ -770,7 +770,6 @@ Partial Class frmVCE_Master
         Me.chkPEZA.TabIndex = 211
         Me.chkPEZA.Text = "PEZA Registered"
         Me.chkPEZA.UseVisualStyleBackColor = True
-        Me.chkPEZA.Visible = False
         '
         'cbTerms
         '

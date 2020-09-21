@@ -24,7 +24,13 @@ Partial Class frmCC
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmCC))
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
+        Me.tsbNew = New System.Windows.Forms.ToolStripButton()
+        Me.tsbEdit = New System.Windows.Forms.ToolStripButton()
+        Me.tsbSave = New System.Windows.Forms.ToolStripButton()
+        Me.tsbDelete = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
+        Me.tsbClose = New System.Windows.Forms.ToolStripButton()
+        Me.tsbExit = New System.Windows.Forms.ToolStripButton()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
@@ -42,12 +48,6 @@ Partial Class frmCC
         Me.cbG1 = New System.Windows.Forms.ComboBox()
         Me.dgvData = New System.Windows.Forms.DataGridView()
         Me.txtOldCode = New System.Windows.Forms.TextBox()
-        Me.tsbNew = New System.Windows.Forms.ToolStripButton()
-        Me.tsbEdit = New System.Windows.Forms.ToolStripButton()
-        Me.tsbSave = New System.Windows.Forms.ToolStripButton()
-        Me.tsbDelete = New System.Windows.Forms.ToolStripButton()
-        Me.tsbClose = New System.Windows.Forms.ToolStripButton()
-        Me.tsbExit = New System.Windows.Forms.ToolStripButton()
         Me.ToolStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgvData, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -56,7 +56,7 @@ Partial Class frmCC
         'ToolStrip1
         '
         Me.ToolStrip1.AutoSize = False
-        Me.ToolStrip1.BackColor = System.Drawing.Color.SeaGreen
+        Me.ToolStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(89, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ToolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbNew, Me.tsbEdit, Me.tsbSave, Me.tsbDelete, Me.ToolStripSeparator3, Me.tsbClose, Me.tsbExit})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
@@ -65,10 +65,77 @@ Partial Class frmCC
         Me.ToolStrip1.TabIndex = 1306
         Me.ToolStrip1.Text = "ToolStrip1"
         '
+        'tsbNew
+        '
+        Me.tsbNew.AutoSize = False
+        Me.tsbNew.ForeColor = System.Drawing.Color.White
+        Me.tsbNew.Image = Global.jade.My.Resources.Resources.circle_document_documents_extension_file_page_sheet_icon_7
+        Me.tsbNew.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbNew.Name = "tsbNew"
+        Me.tsbNew.Size = New System.Drawing.Size(50, 35)
+        Me.tsbNew.Text = "New"
+        Me.tsbNew.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'tsbEdit
+        '
+        Me.tsbEdit.AutoSize = False
+        Me.tsbEdit.ForeColor = System.Drawing.Color.White
+        Me.tsbEdit.Image = Global.jade.My.Resources.Resources.edit_pen_write_notes_document_3c679c93cb5d1fed_512x512
+        Me.tsbEdit.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbEdit.Name = "tsbEdit"
+        Me.tsbEdit.Size = New System.Drawing.Size(50, 35)
+        Me.tsbEdit.Text = "Edit"
+        Me.tsbEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'tsbSave
+        '
+        Me.tsbSave.AutoSize = False
+        Me.tsbSave.ForeColor = System.Drawing.Color.White
+        Me.tsbSave.Image = Global.jade.My.Resources.Resources.Save_Icon
+        Me.tsbSave.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbSave.Name = "tsbSave"
+        Me.tsbSave.Size = New System.Drawing.Size(50, 35)
+        Me.tsbSave.Text = "Save"
+        Me.tsbSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'tsbDelete
+        '
+        Me.tsbDelete.AutoSize = False
+        Me.tsbDelete.ForeColor = System.Drawing.Color.White
+        Me.tsbDelete.Image = Global.jade.My.Resources.Resources.close_icon
+        Me.tsbDelete.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbDelete.Name = "tsbDelete"
+        Me.tsbDelete.Size = New System.Drawing.Size(50, 35)
+        Me.tsbDelete.Text = "Delete"
+        Me.tsbDelete.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.tsbDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
         'ToolStripSeparator3
         '
         Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
         Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 40)
+        '
+        'tsbClose
+        '
+        Me.tsbClose.AutoSize = False
+        Me.tsbClose.ForeColor = System.Drawing.Color.White
+        Me.tsbClose.Image = Global.jade.My.Resources.Resources.close_button_icon_transparent_background_247604
+        Me.tsbClose.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbClose.Name = "tsbClose"
+        Me.tsbClose.Size = New System.Drawing.Size(50, 35)
+        Me.tsbClose.Text = "Close"
+        Me.tsbClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'tsbExit
+        '
+        Me.tsbExit.AutoSize = False
+        Me.tsbExit.ForeColor = System.Drawing.Color.White
+        Me.tsbExit.Image = Global.jade.My.Resources.Resources.exit_button_icon_18
+        Me.tsbExit.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbExit.Name = "tsbExit"
+        Me.tsbExit.Size = New System.Drawing.Size(50, 35)
+        Me.tsbExit.Text = "Exit"
+        Me.tsbExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'GroupBox1
         '
@@ -263,73 +330,6 @@ Partial Class frmCC
         Me.txtOldCode.Size = New System.Drawing.Size(91, 23)
         Me.txtOldCode.TabIndex = 1329
         Me.txtOldCode.Visible = False
-        '
-        'tsbNew
-        '
-        Me.tsbNew.AutoSize = False
-        Me.tsbNew.ForeColor = System.Drawing.Color.White
-        Me.tsbNew.Image = Global.jade.My.Resources.Resources.circle_document_documents_extension_file_page_sheet_icon_7
-        Me.tsbNew.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.tsbNew.Name = "tsbNew"
-        Me.tsbNew.Size = New System.Drawing.Size(50, 35)
-        Me.tsbNew.Text = "New"
-        Me.tsbNew.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        '
-        'tsbEdit
-        '
-        Me.tsbEdit.AutoSize = False
-        Me.tsbEdit.ForeColor = System.Drawing.Color.White
-        Me.tsbEdit.Image = Global.jade.My.Resources.Resources.edit_pen_write_notes_document_3c679c93cb5d1fed_512x512
-        Me.tsbEdit.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.tsbEdit.Name = "tsbEdit"
-        Me.tsbEdit.Size = New System.Drawing.Size(50, 35)
-        Me.tsbEdit.Text = "Edit"
-        Me.tsbEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        '
-        'tsbSave
-        '
-        Me.tsbSave.AutoSize = False
-        Me.tsbSave.ForeColor = System.Drawing.Color.White
-        Me.tsbSave.Image = Global.jade.My.Resources.Resources.Save_Icon
-        Me.tsbSave.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.tsbSave.Name = "tsbSave"
-        Me.tsbSave.Size = New System.Drawing.Size(50, 35)
-        Me.tsbSave.Text = "Save"
-        Me.tsbSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        '
-        'tsbDelete
-        '
-        Me.tsbDelete.AutoSize = False
-        Me.tsbDelete.ForeColor = System.Drawing.Color.White
-        Me.tsbDelete.Image = Global.jade.My.Resources.Resources.close_icon
-        Me.tsbDelete.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.tsbDelete.Name = "tsbDelete"
-        Me.tsbDelete.Size = New System.Drawing.Size(50, 35)
-        Me.tsbDelete.Text = "Delete"
-        Me.tsbDelete.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.tsbDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        '
-        'tsbClose
-        '
-        Me.tsbClose.AutoSize = False
-        Me.tsbClose.ForeColor = System.Drawing.Color.White
-        Me.tsbClose.Image = Global.jade.My.Resources.Resources.close_button_icon_transparent_background_247604
-        Me.tsbClose.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.tsbClose.Name = "tsbClose"
-        Me.tsbClose.Size = New System.Drawing.Size(50, 35)
-        Me.tsbClose.Text = "Close"
-        Me.tsbClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        '
-        'tsbExit
-        '
-        Me.tsbExit.AutoSize = False
-        Me.tsbExit.ForeColor = System.Drawing.Color.White
-        Me.tsbExit.Image = Global.jade.My.Resources.Resources.exit_button_icon_18
-        Me.tsbExit.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.tsbExit.Name = "tsbExit"
-        Me.tsbExit.Size = New System.Drawing.Size(50, 35)
-        Me.tsbExit.Text = "Exit"
-        Me.tsbExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'frmCC
         '

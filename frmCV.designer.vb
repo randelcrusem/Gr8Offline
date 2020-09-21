@@ -48,6 +48,8 @@ Partial Class frmCV
         Me.chVCEName = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.chParticulars = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.chRef = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.chCostID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.chCostCenter = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.Column12 = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.txtRemarks = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -109,8 +111,10 @@ Partial Class frmCV
         Me.txtRFPRef = New System.Windows.Forms.TextBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
+        Me.btnUOMGroup = New System.Windows.Forms.Button()
         Me.txtADVRef = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
+        Me.btnSearchVCE = New System.Windows.Forms.Button()
         Me.txtVCEName = New System.Windows.Forms.TextBox()
         Me.txtVCECode = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -126,18 +130,13 @@ Partial Class frmCV
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.EditEntriesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.tsbSearch = New System.Windows.Forms.ToolStripButton()
         Me.tsbNew = New System.Windows.Forms.ToolStripButton()
         Me.tsbEdit = New System.Windows.Forms.ToolStripButton()
         Me.tsbSave = New System.Windows.Forms.ToolStripButton()
         Me.tsbCancel = New System.Windows.Forms.ToolStripButton()
         Me.tsbDelete = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.tsbOption = New System.Windows.Forms.ToolStripDropDownButton()
         Me.CancelCheckToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmUnreleased = New System.Windows.Forms.ToolStripMenuItem()
@@ -149,17 +148,20 @@ Partial Class frmCV
         Me.FromFundsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FromCAToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FromPCVToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
         Me.tsbPrint = New System.Windows.Forms.ToolStripSplitButton()
         Me.PrintCVToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ChequieToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BIR2307ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsbReports = New System.Windows.Forms.ToolStripDropDownButton()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.tsbPrevious = New System.Windows.Forms.ToolStripButton()
         Me.tsbNext = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.tsbClose = New System.Windows.Forms.ToolStripButton()
         Me.tsbExit = New System.Windows.Forms.ToolStripButton()
-        Me.btnUOMGroup = New System.Windows.Forms.Button()
-        Me.btnSearchVCE = New System.Windows.Forms.Button()
+        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
         CType(Me.dgvEntry, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbPayee.SuspendLayout()
         Me.tcPayment.SuspendLayout()
@@ -273,7 +275,7 @@ Partial Class frmCV
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgvEntry.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvEntry.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgcBranchCode, Me.chAccntCode, Me.chAccntTitle, Me.chDebit, Me.chCredit, Me.chVCECode, Me.chVCEName, Me.chParticulars, Me.chRef, Me.Column12})
+        Me.dgvEntry.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgcBranchCode, Me.chAccntCode, Me.chAccntTitle, Me.chDebit, Me.chCredit, Me.chVCECode, Me.chVCEName, Me.chParticulars, Me.chRef, Me.chCostID, Me.chCostCenter, Me.Column12})
         Me.dgvEntry.Location = New System.Drawing.Point(3, 2)
         Me.dgvEntry.Name = "dgvEntry"
         Me.dgvEntry.RowHeadersWidth = 25
@@ -342,6 +344,17 @@ Partial Class frmCV
         '
         Me.chRef.HeaderText = "RefNo"
         Me.chRef.Name = "chRef"
+        '
+        'chCostID
+        '
+        Me.chCostID.HeaderText = "Cost ID"
+        Me.chCostID.Name = "chCostID"
+        Me.chCostID.Visible = False
+        '
+        'chCostCenter
+        '
+        Me.chCostCenter.HeaderText = "Cost Center"
+        Me.chCostCenter.Name = "chCostCenter"
         '
         'Column12
         '
@@ -1004,6 +1017,16 @@ Partial Class frmCV
         Me.Label16.TabIndex = 1368
         Me.Label16.Text = "VCE Code :"
         '
+        'btnUOMGroup
+        '
+        Me.btnUOMGroup.BackgroundImage = Global.jade.My.Resources.Resources._New
+        Me.btnUOMGroup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnUOMGroup.Location = New System.Drawing.Point(299, 114)
+        Me.btnUOMGroup.Name = "btnUOMGroup"
+        Me.btnUOMGroup.Size = New System.Drawing.Size(25, 25)
+        Me.btnUOMGroup.TabIndex = 7
+        Me.btnUOMGroup.UseVisualStyleBackColor = True
+        '
         'txtADVRef
         '
         Me.txtADVRef.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -1027,6 +1050,16 @@ Partial Class frmCV
         Me.Label14.TabIndex = 1366
         Me.Label14.Text = "ADV Ref. :"
         Me.Label14.Visible = False
+        '
+        'btnSearchVCE
+        '
+        Me.btnSearchVCE.BackgroundImage = Global.jade.My.Resources.Resources.view
+        Me.btnSearchVCE.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnSearchVCE.Location = New System.Drawing.Point(454, 13)
+        Me.btnSearchVCE.Name = "btnSearchVCE"
+        Me.btnSearchVCE.Size = New System.Drawing.Size(25, 25)
+        Me.btnSearchVCE.TabIndex = 2
+        Me.btnSearchVCE.UseVisualStyleBackColor = True
         '
         'txtVCEName
         '
@@ -1176,51 +1209,6 @@ Partial Class frmCV
         Me.ToolStrip1.TabIndex = 1344
         Me.ToolStrip1.Text = "ToolStrip1"
         '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 40)
-        '
-        'ToolStripSeparator4
-        '
-        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        Me.ToolStripSeparator4.Size = New System.Drawing.Size(6, 40)
-        '
-        'ToolStripSeparator2
-        '
-        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 40)
-        '
-        'ToolStripSeparator3
-        '
-        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 40)
-        '
-        'TabControl1
-        '
-        Me.TabControl1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Location = New System.Drawing.Point(8, 287)
-        Me.TabControl1.Margin = New System.Windows.Forms.Padding(4)
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(1077, 248)
-        Me.TabControl1.TabIndex = 1345
-        '
-        'TabPage1
-        '
-        Me.TabPage1.Controls.Add(Me.dgvEntry)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 24)
-        Me.TabPage1.Margin = New System.Windows.Forms.Padding(4)
-        Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(4)
-        Me.TabPage1.Size = New System.Drawing.Size(1069, 220)
-        Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "Entries"
-        Me.TabPage1.UseVisualStyleBackColor = True
-        '
         'tsbSearch
         '
         Me.tsbSearch.AutoSize = False
@@ -1290,6 +1278,11 @@ Partial Class frmCV
         Me.tsbDelete.Text = "Delete"
         Me.tsbDelete.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.tsbDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 40)
         '
         'tsbOption
         '
@@ -1373,6 +1366,11 @@ Partial Class frmCV
         Me.FromPCVToolStripMenuItem.Size = New System.Drawing.Size(156, 22)
         Me.FromPCVToolStripMenuItem.Text = "From PCV"
         '
+        'ToolStripSeparator4
+        '
+        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(6, 40)
+        '
         'tsbPrint
         '
         Me.tsbPrint.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PrintCVToolStripMenuItem, Me.ChequieToolStripMenuItem, Me.BIR2307ToolStripMenuItem})
@@ -1412,6 +1410,11 @@ Partial Class frmCV
         Me.tsbReports.Text = "Reports"
         Me.tsbReports.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
+        'ToolStripSeparator2
+        '
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 40)
+        '
         'tsbPrevious
         '
         Me.tsbPrevious.AutoSize = False
@@ -1433,6 +1436,11 @@ Partial Class frmCV
         Me.tsbNext.Size = New System.Drawing.Size(50, 35)
         Me.tsbNext.Text = "Next"
         Me.tsbNext.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'ToolStripSeparator3
+        '
+        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 40)
         '
         'tsbClose
         '
@@ -1456,25 +1464,30 @@ Partial Class frmCV
         Me.tsbExit.Text = "Exit"
         Me.tsbExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
-        'btnUOMGroup
+        'TabControl1
         '
-        Me.btnUOMGroup.BackgroundImage = Global.jade.My.Resources.Resources._New
-        Me.btnUOMGroup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnUOMGroup.Location = New System.Drawing.Point(299, 114)
-        Me.btnUOMGroup.Name = "btnUOMGroup"
-        Me.btnUOMGroup.Size = New System.Drawing.Size(25, 25)
-        Me.btnUOMGroup.TabIndex = 7
-        Me.btnUOMGroup.UseVisualStyleBackColor = True
+        Me.TabControl1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TabControl1.Controls.Add(Me.TabPage1)
+        Me.TabControl1.Location = New System.Drawing.Point(8, 287)
+        Me.TabControl1.Margin = New System.Windows.Forms.Padding(4)
+        Me.TabControl1.Name = "TabControl1"
+        Me.TabControl1.SelectedIndex = 0
+        Me.TabControl1.Size = New System.Drawing.Size(1077, 248)
+        Me.TabControl1.TabIndex = 1345
         '
-        'btnSearchVCE
+        'TabPage1
         '
-        Me.btnSearchVCE.BackgroundImage = Global.jade.My.Resources.Resources.view
-        Me.btnSearchVCE.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnSearchVCE.Location = New System.Drawing.Point(454, 13)
-        Me.btnSearchVCE.Name = "btnSearchVCE"
-        Me.btnSearchVCE.Size = New System.Drawing.Size(25, 25)
-        Me.btnSearchVCE.TabIndex = 2
-        Me.btnSearchVCE.UseVisualStyleBackColor = True
+        Me.TabPage1.Controls.Add(Me.dgvEntry)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 24)
+        Me.TabPage1.Margin = New System.Windows.Forms.Padding(4)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(4)
+        Me.TabPage1.Size = New System.Drawing.Size(1069, 220)
+        Me.TabPage1.TabIndex = 0
+        Me.TabPage1.Text = "Entries"
+        Me.TabPage1.UseVisualStyleBackColor = True
         '
         'frmCV
         '
@@ -1601,16 +1614,6 @@ Partial Class frmCV
     Friend WithEvents txtRFPRef As System.Windows.Forms.TextBox
     Friend WithEvents Label17 As System.Windows.Forms.Label
     Friend WithEvents FromLoanToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents dgcBranchCode As System.Windows.Forms.DataGridViewComboBoxColumn
-    Friend WithEvents chAccntCode As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents chAccntTitle As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents chDebit As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents chCredit As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents chVCECode As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents chVCEName As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents chParticulars As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents chRef As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column12 As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents tcPayment As System.Windows.Forms.TabControl
     Friend WithEvents tpCash As System.Windows.Forms.TabPage
     Friend WithEvents txtCashAmount As System.Windows.Forms.TextBox
@@ -1656,4 +1659,16 @@ Partial Class frmCV
     Friend WithEvents FromCAToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents txtCARef As System.Windows.Forms.TextBox
     Friend WithEvents Label32 As System.Windows.Forms.Label
+    Friend WithEvents dgcBranchCode As System.Windows.Forms.DataGridViewComboBoxColumn
+    Friend WithEvents chAccntCode As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents chAccntTitle As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents chDebit As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents chCredit As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents chVCECode As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents chVCEName As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents chParticulars As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents chRef As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents chCostID As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents chCostCenter As System.Windows.Forms.DataGridViewComboBoxColumn
+    Friend WithEvents Column12 As System.Windows.Forms.DataGridViewButtonColumn
 End Class

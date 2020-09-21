@@ -41,6 +41,7 @@
         dtpDocDate.Enabled = Value
         txtAmount.Enabled = Value
         cbDefAccount.Enabled = Value
+        cbCostCenter.Enabled = Value
         If TransAuto Then
             txtTransNum.Enabled = False
         Else
@@ -49,11 +50,13 @@
     End Sub
 
     Private Sub LoadCA(ID As String)
-        Dim query As String
+        Dim query, costID As String
         query = " SELECT  TransID, CA_No, tblCA.VCECOde, VCEName, DateCA, ISNULL(Amount,0) AS Amount, AccntCode, " & _
-                "          Remarks,  tblCA.Status  " & _
+                "          Remarks,  tblCA.Status, Code + ' - ' + Description AS Description  " & _
                 " FROM    tblCA INNER JOIN viewVCE_Master " & _
                 " ON      tblCA.VCECode = viewVCE_Master.VCECode " & _
+                " LEFT JOIN tblCC ON " & _
+                " tblCC.Code = tblCA.CostID " & _
                 " WHERE   TransID ='" & ID & "' "
         SQL.ReadQuery(query)
         If SQL.SQLDR.Read Then
@@ -66,6 +69,7 @@
             txtAmount.Text = CDec(SQL.SQLDR("Amount")).ToString("N2")
             txtRemarks.Text = SQL.SQLDR("Remarks").ToString
             txtStatus.Text = SQL.SQLDR("Status").ToString
+            cbCostCenter.SelectedItem = SQL.SQLDR("Description").ToString
             cbDefAccount.SelectedItem = GetAccntTitle(SQL.SQLDR("AccntCode").ToString)
             ' TOOLSTRIP BUTTONS
             If txtStatus.Text = "Cancelled" Then
@@ -109,6 +113,7 @@
         txtRemarks.Clear()
         txtStatus.Text = "Open"
         cbDefAccount.SelectedIndex = -1
+        cbCostCenter.SelectedIndex = -1
         dtpDocDate.Value = Date.Today.Date
         txtAmount.Text = "0.00"
     End Sub
@@ -120,11 +125,12 @@
             Else
                 AccntCode = GetAccntCode(cbDefAccount.SelectedItem)
             End If
-            Dim insertSQL As String
+            Dim insertSQL, costID As String
+            costID = Strings.Left(cbCostCenter.SelectedItem, cbCostCenter.SelectedItem.ToString.IndexOf(" - "))
             activityStatus = True
             insertSQL = " INSERT INTO " & _
-                    " tblCA    (TransID, CA_No, BranchCode, BusinessCode, VCECode, DateCA,  Amount, AccntCode,  Remarks,  WhoCreated) " & _
-                    " VALUES (@TransID, @CA_No, @BranchCode, @BusinessCode, @VCECode, @DateCA, @Amount, @AccntCode,  @Remarks,  @WhoCreated) "
+                    " tblCA    (TransID, CA_No, BranchCode, BusinessCode, VCECode, DateCA,  Amount, AccntCode,  Remarks, CostID, WhoCreated) " & _
+                    " VALUES (@TransID, @CA_No, @BranchCode, @BusinessCode, @VCECode, @DateCA, @Amount, @AccntCode,  @Remarks, @CostID, @WhoCreated) "
             SQL.FlushParams()
             SQL.AddParam("@TransID", TransID)
             SQL.AddParam("@CA_No", CANo)
@@ -135,6 +141,7 @@
             SQL.AddParam("@AccntCode", AccntCode)
             SQL.AddParam("@Amount", IIf(txtAmount.Text = "", 0, CDec(txtAmount.Text)))
             SQL.AddParam("@Remarks", txtRemarks.Text)
+            SQL.AddParam("@CostID", costID)
             SQL.AddParam("@WhoCreated", UserID)
             SQL.ExecNonQuery(insertSQL)
         Catch ex As Exception
@@ -153,11 +160,12 @@
             Else
                 AccntCode = GetAccntCode(cbDefAccount.SelectedItem)
             End If
-            Dim insertSQL As String
+            Dim insertSQL, costID As String
+            costID = Strings.Left(cbCostCenter.SelectedItem, cbCostCenter.SelectedItem.ToString.IndexOf(" - "))
             activityStatus = True
             insertSQL = " UPDATE tblCA " & _
                         " SET    CA_No = @CA_No, BranchCode = @BranchCode, BusinessCode = @BusinessCode, " & _
-                        "        VCECode = @VCECode, DateCA = @DateCA, Amount = @Amount,   " & _
+                        "        VCECode = @VCECode, DateCA = @DateCA, Amount = @Amount, CostID = @CostID,   " & _
                         "         AccntCode = @AccntCode, " & _
                         "        Remarks = @Remarks, WhoModified = @WhoModified, DateModified = GETDATE() " & _
                         " WHERE  TransID = @TransID "
@@ -171,6 +179,7 @@
             SQL.AddParam("@AccntCode", AccntCode)
             SQL.AddParam("@Amount", IIf(txtAmount.Text = "", 0, CDec(txtAmount.Text)))
             SQL.AddParam("@Remarks", txtRemarks.Text)
+            SQL.AddParam("@CostID", costID)
             SQL.AddParam("@WhoModified", UserID)
             SQL.ExecNonQuery(insertSQL)
         Catch ex As Exception
@@ -489,6 +498,7 @@
             TransAuto = GetTransSetup(ModuleID)
             dtpDocDate.Value = Date.Today.Date
             LoadAccount()
+            LoadCostCenter()
             If CANo <> "" Then
                 LoadCA(CANo)
             End If
@@ -510,4 +520,16 @@
             SaveError(ex.Message, ex.StackTrace, Me.Name.ToString, ModuleID)
         End Try
     End Sub
+
+    Private Sub LoadCostCenter()
+
+        Dim selectSQL As String = " SELECT Code + ' - ' + Description AS Description  FROM tblCC WHERE Status = 'Active'"
+        SQL.ReadQuery(selectSQL, 2)
+        cbCostCenter.Items.Clear()
+        While SQL.SQLDR2.Read
+            cbCostCenter.Items.Add(SQL.SQLDR2("Description").ToString)
+        End While
+
+    End Sub
+   
 End Class

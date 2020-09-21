@@ -32,6 +32,48 @@ Partial Class frmPJ
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.dgvEntry = New System.Windows.Forms.DataGridView()
+        Me.txtDifference = New System.Windows.Forms.TextBox()
+        Me.lblRemarks = New System.Windows.Forms.Label()
+        Me.txtRemarks = New System.Windows.Forms.TextBox()
+        Me.BtnSearchOR = New System.Windows.Forms.Button()
+        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
+        Me.tsbSearch = New System.Windows.Forms.ToolStripButton()
+        Me.tsbNew = New System.Windows.Forms.ToolStripButton()
+        Me.tsbEdit = New System.Windows.Forms.ToolStripButton()
+        Me.tsbSave = New System.Windows.Forms.ToolStripButton()
+        Me.tsbCancel = New System.Windows.Forms.ToolStripButton()
+        Me.tsbDelete = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.tsbCopy = New System.Windows.Forms.ToolStripDropDownButton()
+        Me.tsbCopyPO = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FromLoansToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FromFundsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FromSavingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FromMemberToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
+        Me.tsbPrint = New System.Windows.Forms.ToolStripButton()
+        Me.tsbReports = New System.Windows.Forms.ToolStripDropDownButton()
+        Me.TestToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.tsbPrevious = New System.Windows.Forms.ToolStripButton()
+        Me.tsbNext = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
+        Me.tsbClose = New System.Windows.Forms.ToolStripButton()
+        Me.tsbExit = New System.Windows.Forms.ToolStripButton()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txtLoanRef = New System.Windows.Forms.TextBox()
+        Me.Label31 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.btnSearchVCE = New System.Windows.Forms.Button()
+        Me.txtVCEName = New System.Windows.Forms.TextBox()
+        Me.txtVCECode = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.dtpDocDate = New System.Windows.Forms.DateTimePicker()
+        Me.txtTransNum = New System.Windows.Forms.TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.txtStatus = New System.Windows.Forms.TextBox()
         Me.chAccntCode = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.chAccntTitle = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.chDebit = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -45,48 +87,6 @@ Partial Class frmPJ
         Me.chCIP_Code = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.chCIP_Desc = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.chBranchCode = New System.Windows.Forms.DataGridViewComboBoxColumn()
-        Me.txtDifference = New System.Windows.Forms.TextBox()
-        Me.lblRemarks = New System.Windows.Forms.Label()
-        Me.txtRemarks = New System.Windows.Forms.TextBox()
-        Me.BtnSearchOR = New System.Windows.Forms.Button()
-        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.txtLoanRef = New System.Windows.Forms.TextBox()
-        Me.Label31 = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.txtVCEName = New System.Windows.Forms.TextBox()
-        Me.txtVCECode = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.dtpDocDate = New System.Windows.Forms.DateTimePicker()
-        Me.txtTransNum = New System.Windows.Forms.TextBox()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.txtStatus = New System.Windows.Forms.TextBox()
-        Me.btnSearchVCE = New System.Windows.Forms.Button()
-        Me.tsbSearch = New System.Windows.Forms.ToolStripButton()
-        Me.tsbNew = New System.Windows.Forms.ToolStripButton()
-        Me.tsbEdit = New System.Windows.Forms.ToolStripButton()
-        Me.tsbSave = New System.Windows.Forms.ToolStripButton()
-        Me.tsbCancel = New System.Windows.Forms.ToolStripButton()
-        Me.tsbDelete = New System.Windows.Forms.ToolStripButton()
-        Me.tsbCopy = New System.Windows.Forms.ToolStripDropDownButton()
-        Me.tsbCopyPO = New System.Windows.Forms.ToolStripMenuItem()
-        Me.FromLoansToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.FromFundsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.FromSavingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.FromMemberToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsbPrint = New System.Windows.Forms.ToolStripButton()
-        Me.tsbReports = New System.Windows.Forms.ToolStripDropDownButton()
-        Me.TestToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsbPrevious = New System.Windows.Forms.ToolStripButton()
-        Me.tsbNext = New System.Windows.Forms.ToolStripButton()
-        Me.tsbClose = New System.Windows.Forms.ToolStripButton()
-        Me.tsbExit = New System.Windows.Forms.ToolStripButton()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.dgvEntry, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -167,94 +167,6 @@ Partial Class frmPJ
         Me.dgvEntry.Size = New System.Drawing.Size(1125, 336)
         Me.dgvEntry.TabIndex = 1304
         '
-        'chAccntCode
-        '
-        Me.chAccntCode.HeaderText = "Account Code"
-        Me.chAccntCode.Name = "chAccntCode"
-        Me.chAccntCode.Width = 120
-        '
-        'chAccntTitle
-        '
-        Me.chAccntTitle.HeaderText = "Account Title"
-        Me.chAccntTitle.Name = "chAccntTitle"
-        Me.chAccntTitle.Width = 250
-        '
-        'chDebit
-        '
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle1.Format = "999,999,999.00"
-        DataGridViewCellStyle1.NullValue = "0.00"
-        Me.chDebit.DefaultCellStyle = DataGridViewCellStyle1
-        Me.chDebit.HeaderText = "Debit"
-        Me.chDebit.Name = "chDebit"
-        '
-        'chCredit
-        '
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle2.Format = "999,999,999.00"
-        DataGridViewCellStyle2.NullValue = "0.00"
-        Me.chCredit.DefaultCellStyle = DataGridViewCellStyle2
-        Me.chCredit.HeaderText = "Credit"
-        Me.chCredit.Name = "chCredit"
-        '
-        'chParticulars
-        '
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomRight
-        Me.chParticulars.DefaultCellStyle = DataGridViewCellStyle3
-        Me.chParticulars.HeaderText = "Particulars"
-        Me.chParticulars.Name = "chParticulars"
-        '
-        'chVCECode
-        '
-        Me.chVCECode.HeaderText = "VCECode"
-        Me.chVCECode.Name = "chVCECode"
-        Me.chVCECode.Width = 80
-        '
-        'chVCEName
-        '
-        Me.chVCEName.HeaderText = "VCEName"
-        Me.chVCEName.Name = "chVCEName"
-        Me.chVCEName.Width = 200
-        '
-        'chRefNo
-        '
-        Me.chRefNo.HeaderText = "Reference ID"
-        Me.chRefNo.Name = "chRefNo"
-        Me.chRefNo.Width = 120
-        '
-        'chCostID
-        '
-        Me.chCostID.HeaderText = "Cost ID"
-        Me.chCostID.Name = "chCostID"
-        Me.chCostID.Visible = False
-        '
-        'chCostCenter
-        '
-        Me.chCostCenter.HeaderText = "Cost Center"
-        Me.chCostCenter.Name = "chCostCenter"
-        Me.chCostCenter.Visible = False
-        Me.chCostCenter.Width = 150
-        '
-        'chCIP_Code
-        '
-        Me.chCIP_Code.HeaderText = "CIP Code"
-        Me.chCIP_Code.Name = "chCIP_Code"
-        Me.chCIP_Code.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.chCIP_Code.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.chCIP_Code.Visible = False
-        '
-        'chCIP_Desc
-        '
-        Me.chCIP_Desc.HeaderText = "CIP Desc"
-        Me.chCIP_Desc.Name = "chCIP_Desc"
-        Me.chCIP_Desc.Visible = False
-        Me.chCIP_Desc.Width = 150
-        '
-        'chBranchCode
-        '
-        Me.chBranchCode.HeaderText = "BranchCode"
-        Me.chBranchCode.Name = "chBranchCode"
-        '
         'txtDifference
         '
         Me.txtDifference.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
@@ -309,25 +221,215 @@ Partial Class frmPJ
         Me.ToolStrip1.TabIndex = 1344
         Me.ToolStrip1.Text = "ToolStrip1"
         '
+        'tsbSearch
+        '
+        Me.tsbSearch.AutoSize = False
+        Me.tsbSearch.ForeColor = System.Drawing.Color.White
+        Me.tsbSearch.Image = Global.jade.My.Resources.Resources.view
+        Me.tsbSearch.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.tsbSearch.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbSearch.Name = "tsbSearch"
+        Me.tsbSearch.Size = New System.Drawing.Size(50, 35)
+        Me.tsbSearch.Text = "Search"
+        Me.tsbSearch.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.tsbSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'tsbNew
+        '
+        Me.tsbNew.AutoSize = False
+        Me.tsbNew.ForeColor = System.Drawing.Color.White
+        Me.tsbNew.Image = Global.jade.My.Resources.Resources.circle_document_documents_extension_file_page_sheet_icon_7
+        Me.tsbNew.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbNew.Name = "tsbNew"
+        Me.tsbNew.Size = New System.Drawing.Size(50, 35)
+        Me.tsbNew.Text = "New"
+        Me.tsbNew.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'tsbEdit
+        '
+        Me.tsbEdit.AutoSize = False
+        Me.tsbEdit.ForeColor = System.Drawing.Color.White
+        Me.tsbEdit.Image = Global.jade.My.Resources.Resources.edit_pen_write_notes_document_3c679c93cb5d1fed_512x512
+        Me.tsbEdit.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbEdit.Name = "tsbEdit"
+        Me.tsbEdit.Size = New System.Drawing.Size(50, 35)
+        Me.tsbEdit.Text = "Edit"
+        Me.tsbEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'tsbSave
+        '
+        Me.tsbSave.AutoSize = False
+        Me.tsbSave.ForeColor = System.Drawing.Color.White
+        Me.tsbSave.Image = Global.jade.My.Resources.Resources.Save_Icon
+        Me.tsbSave.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbSave.Name = "tsbSave"
+        Me.tsbSave.Size = New System.Drawing.Size(50, 35)
+        Me.tsbSave.Text = "Save"
+        Me.tsbSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'tsbCancel
+        '
+        Me.tsbCancel.AutoSize = False
+        Me.tsbCancel.ForeColor = System.Drawing.Color.White
+        Me.tsbCancel.Image = Global.jade.My.Resources.Resources.close_icon
+        Me.tsbCancel.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbCancel.Name = "tsbCancel"
+        Me.tsbCancel.Size = New System.Drawing.Size(50, 35)
+        Me.tsbCancel.Text = "Cancel"
+        Me.tsbCancel.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.tsbCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'tsbDelete
+        '
+        Me.tsbDelete.AutoSize = False
+        Me.tsbDelete.ForeColor = System.Drawing.Color.White
+        Me.tsbDelete.Image = Global.jade.My.Resources.Resources.close_icon
+        Me.tsbDelete.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbDelete.Name = "tsbDelete"
+        Me.tsbDelete.Size = New System.Drawing.Size(50, 35)
+        Me.tsbDelete.Text = "Delete"
+        Me.tsbDelete.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.tsbDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.tsbDelete.Visible = False
+        '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
         Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 40)
+        '
+        'tsbCopy
+        '
+        Me.tsbCopy.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbCopyPO, Me.FromLoansToolStripMenuItem, Me.FromFundsToolStripMenuItem, Me.FromSavingsToolStripMenuItem, Me.FromMemberToolStripMenuItem})
+        Me.tsbCopy.ForeColor = System.Drawing.Color.White
+        Me.tsbCopy.Image = Global.jade.My.Resources.Resources.finance_report_infographic_512
+        Me.tsbCopy.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbCopy.Name = "tsbCopy"
+        Me.tsbCopy.Size = New System.Drawing.Size(48, 37)
+        Me.tsbCopy.Text = "Copy"
+        Me.tsbCopy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'tsbCopyPO
+        '
+        Me.tsbCopyPO.Name = "tsbCopyPO"
+        Me.tsbCopyPO.Size = New System.Drawing.Size(163, 22)
+        Me.tsbCopyPO.Text = "From PO"
+        Me.tsbCopyPO.Visible = False
+        '
+        'FromLoansToolStripMenuItem
+        '
+        Me.FromLoansToolStripMenuItem.Name = "FromLoansToolStripMenuItem"
+        Me.FromLoansToolStripMenuItem.Size = New System.Drawing.Size(163, 22)
+        Me.FromLoansToolStripMenuItem.Text = "From Loans"
+        Me.FromLoansToolStripMenuItem.Visible = False
+        '
+        'FromFundsToolStripMenuItem
+        '
+        Me.FromFundsToolStripMenuItem.Name = "FromFundsToolStripMenuItem"
+        Me.FromFundsToolStripMenuItem.Size = New System.Drawing.Size(163, 22)
+        Me.FromFundsToolStripMenuItem.Text = "From Funds"
+        Me.FromFundsToolStripMenuItem.Visible = False
+        '
+        'FromSavingsToolStripMenuItem
+        '
+        Me.FromSavingsToolStripMenuItem.Name = "FromSavingsToolStripMenuItem"
+        Me.FromSavingsToolStripMenuItem.Size = New System.Drawing.Size(163, 22)
+        Me.FromSavingsToolStripMenuItem.Text = "From Savings"
+        Me.FromSavingsToolStripMenuItem.Visible = False
+        '
+        'FromMemberToolStripMenuItem
+        '
+        Me.FromMemberToolStripMenuItem.Name = "FromMemberToolStripMenuItem"
+        Me.FromMemberToolStripMenuItem.Size = New System.Drawing.Size(163, 22)
+        Me.FromMemberToolStripMenuItem.Text = "Member Transfer"
+        Me.FromMemberToolStripMenuItem.Visible = False
         '
         'ToolStripSeparator4
         '
         Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
         Me.ToolStripSeparator4.Size = New System.Drawing.Size(6, 40)
         '
+        'tsbPrint
+        '
+        Me.tsbPrint.AutoSize = False
+        Me.tsbPrint.ForeColor = System.Drawing.Color.White
+        Me.tsbPrint.Image = Global.jade.My.Resources.Resources.printer_circle_blue_512
+        Me.tsbPrint.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbPrint.Name = "tsbPrint"
+        Me.tsbPrint.Size = New System.Drawing.Size(50, 35)
+        Me.tsbPrint.Text = "Print"
+        Me.tsbPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'tsbReports
+        '
+        Me.tsbReports.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TestToolStripMenuItem1})
+        Me.tsbReports.ForeColor = System.Drawing.Color.White
+        Me.tsbReports.Image = Global.jade.My.Resources.Resources.finance_report_infographic_512
+        Me.tsbReports.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbReports.Name = "tsbReports"
+        Me.tsbReports.Size = New System.Drawing.Size(60, 37)
+        Me.tsbReports.Text = "Reports"
+        Me.tsbReports.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.tsbReports.Visible = False
+        '
+        'TestToolStripMenuItem1
+        '
+        Me.TestToolStripMenuItem1.Name = "TestToolStripMenuItem1"
+        Me.TestToolStripMenuItem1.Size = New System.Drawing.Size(117, 22)
+        Me.TestToolStripMenuItem1.Text = "APV List"
+        '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
         Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 40)
         '
+        'tsbPrevious
+        '
+        Me.tsbPrevious.AutoSize = False
+        Me.tsbPrevious.ForeColor = System.Drawing.Color.White
+        Me.tsbPrevious.Image = Global.jade.My.Resources.Resources.arrows_147746_960_720
+        Me.tsbPrevious.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbPrevious.Name = "tsbPrevious"
+        Me.tsbPrevious.Size = New System.Drawing.Size(50, 35)
+        Me.tsbPrevious.Text = "Previous"
+        Me.tsbPrevious.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'tsbNext
+        '
+        Me.tsbNext.AutoSize = False
+        Me.tsbNext.ForeColor = System.Drawing.Color.White
+        Me.tsbNext.Image = Global.jade.My.Resources.Resources.red_arrow_png_15
+        Me.tsbNext.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbNext.Name = "tsbNext"
+        Me.tsbNext.Size = New System.Drawing.Size(50, 35)
+        Me.tsbNext.Text = "Next"
+        Me.tsbNext.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
         'ToolStripSeparator3
         '
         Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
         Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 40)
+        '
+        'tsbClose
+        '
+        Me.tsbClose.AutoSize = False
+        Me.tsbClose.ForeColor = System.Drawing.Color.White
+        Me.tsbClose.Image = Global.jade.My.Resources.Resources.close_button_icon_transparent_background_247604
+        Me.tsbClose.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbClose.Name = "tsbClose"
+        Me.tsbClose.Size = New System.Drawing.Size(50, 35)
+        Me.tsbClose.Text = "Close"
+        Me.tsbClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'tsbExit
+        '
+        Me.tsbExit.AutoSize = False
+        Me.tsbExit.ForeColor = System.Drawing.Color.White
+        Me.tsbExit.Image = Global.jade.My.Resources.Resources.exit_button_icon_18
+        Me.tsbExit.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbExit.Name = "tsbExit"
+        Me.tsbExit.Size = New System.Drawing.Size(50, 35)
+        Me.tsbExit.Text = "Exit"
+        Me.tsbExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'GroupBox1
         '
@@ -387,6 +489,16 @@ Partial Class frmPJ
         Me.Label16.Size = New System.Drawing.Size(77, 16)
         Me.Label16.TabIndex = 1376
         Me.Label16.Text = "VCE Code :"
+        '
+        'btnSearchVCE
+        '
+        Me.btnSearchVCE.BackgroundImage = Global.jade.My.Resources.Resources.view
+        Me.btnSearchVCE.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnSearchVCE.Location = New System.Drawing.Point(416, 13)
+        Me.btnSearchVCE.Name = "btnSearchVCE"
+        Me.btnSearchVCE.Size = New System.Drawing.Size(25, 25)
+        Me.btnSearchVCE.TabIndex = 1373
+        Me.btnSearchVCE.UseVisualStyleBackColor = True
         '
         'txtVCEName
         '
@@ -478,205 +590,92 @@ Partial Class frmPJ
         Me.txtStatus.TabIndex = 1367
         Me.txtStatus.Text = "Open"
         '
-        'btnSearchVCE
+        'chAccntCode
         '
-        Me.btnSearchVCE.BackgroundImage = Global.jade.My.Resources.Resources.view
-        Me.btnSearchVCE.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnSearchVCE.Location = New System.Drawing.Point(416, 13)
-        Me.btnSearchVCE.Name = "btnSearchVCE"
-        Me.btnSearchVCE.Size = New System.Drawing.Size(25, 25)
-        Me.btnSearchVCE.TabIndex = 1373
-        Me.btnSearchVCE.UseVisualStyleBackColor = True
+        Me.chAccntCode.HeaderText = "Account Code"
+        Me.chAccntCode.Name = "chAccntCode"
+        Me.chAccntCode.Width = 120
         '
-        'tsbSearch
+        'chAccntTitle
         '
-        Me.tsbSearch.AutoSize = False
-        Me.tsbSearch.ForeColor = System.Drawing.Color.White
-        Me.tsbSearch.Image = Global.jade.My.Resources.Resources.view
-        Me.tsbSearch.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.tsbSearch.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.tsbSearch.Name = "tsbSearch"
-        Me.tsbSearch.Size = New System.Drawing.Size(50, 35)
-        Me.tsbSearch.Text = "Search"
-        Me.tsbSearch.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.tsbSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.chAccntTitle.HeaderText = "Account Title"
+        Me.chAccntTitle.Name = "chAccntTitle"
+        Me.chAccntTitle.Width = 250
         '
-        'tsbNew
+        'chDebit
         '
-        Me.tsbNew.AutoSize = False
-        Me.tsbNew.ForeColor = System.Drawing.Color.White
-        Me.tsbNew.Image = Global.jade.My.Resources.Resources.circle_document_documents_extension_file_page_sheet_icon_7
-        Me.tsbNew.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.tsbNew.Name = "tsbNew"
-        Me.tsbNew.Size = New System.Drawing.Size(50, 35)
-        Me.tsbNew.Text = "New"
-        Me.tsbNew.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle1.Format = "999,999,999.00"
+        DataGridViewCellStyle1.NullValue = "0.00"
+        Me.chDebit.DefaultCellStyle = DataGridViewCellStyle1
+        Me.chDebit.HeaderText = "Debit"
+        Me.chDebit.Name = "chDebit"
         '
-        'tsbEdit
+        'chCredit
         '
-        Me.tsbEdit.AutoSize = False
-        Me.tsbEdit.ForeColor = System.Drawing.Color.White
-        Me.tsbEdit.Image = Global.jade.My.Resources.Resources.edit_pen_write_notes_document_3c679c93cb5d1fed_512x512
-        Me.tsbEdit.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.tsbEdit.Name = "tsbEdit"
-        Me.tsbEdit.Size = New System.Drawing.Size(50, 35)
-        Me.tsbEdit.Text = "Edit"
-        Me.tsbEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle2.Format = "999,999,999.00"
+        DataGridViewCellStyle2.NullValue = "0.00"
+        Me.chCredit.DefaultCellStyle = DataGridViewCellStyle2
+        Me.chCredit.HeaderText = "Credit"
+        Me.chCredit.Name = "chCredit"
         '
-        'tsbSave
+        'chParticulars
         '
-        Me.tsbSave.AutoSize = False
-        Me.tsbSave.ForeColor = System.Drawing.Color.White
-        Me.tsbSave.Image = Global.jade.My.Resources.Resources.Save_Icon
-        Me.tsbSave.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.tsbSave.Name = "tsbSave"
-        Me.tsbSave.Size = New System.Drawing.Size(50, 35)
-        Me.tsbSave.Text = "Save"
-        Me.tsbSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomRight
+        Me.chParticulars.DefaultCellStyle = DataGridViewCellStyle3
+        Me.chParticulars.HeaderText = "Particulars"
+        Me.chParticulars.Name = "chParticulars"
         '
-        'tsbCancel
+        'chVCECode
         '
-        Me.tsbCancel.AutoSize = False
-        Me.tsbCancel.ForeColor = System.Drawing.Color.White
-        Me.tsbCancel.Image = Global.jade.My.Resources.Resources.close_icon
-        Me.tsbCancel.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.tsbCancel.Name = "tsbCancel"
-        Me.tsbCancel.Size = New System.Drawing.Size(50, 35)
-        Me.tsbCancel.Text = "Cancel"
-        Me.tsbCancel.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.tsbCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.chVCECode.HeaderText = "VCECode"
+        Me.chVCECode.Name = "chVCECode"
+        Me.chVCECode.Width = 80
         '
-        'tsbDelete
+        'chVCEName
         '
-        Me.tsbDelete.AutoSize = False
-        Me.tsbDelete.ForeColor = System.Drawing.Color.White
-        Me.tsbDelete.Image = Global.jade.My.Resources.Resources.close_icon
-        Me.tsbDelete.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.tsbDelete.Name = "tsbDelete"
-        Me.tsbDelete.Size = New System.Drawing.Size(50, 35)
-        Me.tsbDelete.Text = "Delete"
-        Me.tsbDelete.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.tsbDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.tsbDelete.Visible = False
+        Me.chVCEName.HeaderText = "VCEName"
+        Me.chVCEName.Name = "chVCEName"
+        Me.chVCEName.Width = 200
         '
-        'tsbCopy
+        'chRefNo
         '
-        Me.tsbCopy.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbCopyPO, Me.FromLoansToolStripMenuItem, Me.FromFundsToolStripMenuItem, Me.FromSavingsToolStripMenuItem, Me.FromMemberToolStripMenuItem})
-        Me.tsbCopy.ForeColor = System.Drawing.Color.White
-        Me.tsbCopy.Image = Global.jade.My.Resources.Resources.finance_report_infographic_512
-        Me.tsbCopy.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.tsbCopy.Name = "tsbCopy"
-        Me.tsbCopy.Size = New System.Drawing.Size(48, 37)
-        Me.tsbCopy.Text = "Copy"
-        Me.tsbCopy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.chRefNo.HeaderText = "Reference ID"
+        Me.chRefNo.Name = "chRefNo"
+        Me.chRefNo.Width = 120
         '
-        'tsbCopyPO
+        'chCostID
         '
-        Me.tsbCopyPO.Name = "tsbCopyPO"
-        Me.tsbCopyPO.Size = New System.Drawing.Size(163, 22)
-        Me.tsbCopyPO.Text = "From PO"
-        Me.tsbCopyPO.Visible = False
+        Me.chCostID.HeaderText = "Cost ID"
+        Me.chCostID.Name = "chCostID"
+        Me.chCostID.Visible = False
         '
-        'FromLoansToolStripMenuItem
+        'chCostCenter
         '
-        Me.FromLoansToolStripMenuItem.Name = "FromLoansToolStripMenuItem"
-        Me.FromLoansToolStripMenuItem.Size = New System.Drawing.Size(163, 22)
-        Me.FromLoansToolStripMenuItem.Text = "From Loans"
-        Me.FromLoansToolStripMenuItem.Visible = False
+        Me.chCostCenter.HeaderText = "Cost Center"
+        Me.chCostCenter.Name = "chCostCenter"
+        Me.chCostCenter.Width = 150
         '
-        'FromFundsToolStripMenuItem
+        'chCIP_Code
         '
-        Me.FromFundsToolStripMenuItem.Name = "FromFundsToolStripMenuItem"
-        Me.FromFundsToolStripMenuItem.Size = New System.Drawing.Size(163, 22)
-        Me.FromFundsToolStripMenuItem.Text = "From Funds"
-        Me.FromFundsToolStripMenuItem.Visible = False
+        Me.chCIP_Code.HeaderText = "CIP Code"
+        Me.chCIP_Code.Name = "chCIP_Code"
+        Me.chCIP_Code.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.chCIP_Code.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.chCIP_Code.Visible = False
         '
-        'FromSavingsToolStripMenuItem
+        'chCIP_Desc
         '
-        Me.FromSavingsToolStripMenuItem.Name = "FromSavingsToolStripMenuItem"
-        Me.FromSavingsToolStripMenuItem.Size = New System.Drawing.Size(163, 22)
-        Me.FromSavingsToolStripMenuItem.Text = "From Savings"
-        Me.FromSavingsToolStripMenuItem.Visible = False
+        Me.chCIP_Desc.HeaderText = "CIP Desc"
+        Me.chCIP_Desc.Name = "chCIP_Desc"
+        Me.chCIP_Desc.Visible = False
+        Me.chCIP_Desc.Width = 150
         '
-        'FromMemberToolStripMenuItem
+        'chBranchCode
         '
-        Me.FromMemberToolStripMenuItem.Name = "FromMemberToolStripMenuItem"
-        Me.FromMemberToolStripMenuItem.Size = New System.Drawing.Size(163, 22)
-        Me.FromMemberToolStripMenuItem.Text = "Member Transfer"
-        Me.FromMemberToolStripMenuItem.Visible = False
-        '
-        'tsbPrint
-        '
-        Me.tsbPrint.AutoSize = False
-        Me.tsbPrint.ForeColor = System.Drawing.Color.White
-        Me.tsbPrint.Image = Global.jade.My.Resources.Resources.printer_circle_blue_512
-        Me.tsbPrint.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.tsbPrint.Name = "tsbPrint"
-        Me.tsbPrint.Size = New System.Drawing.Size(50, 35)
-        Me.tsbPrint.Text = "Print"
-        Me.tsbPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        '
-        'tsbReports
-        '
-        Me.tsbReports.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TestToolStripMenuItem1})
-        Me.tsbReports.ForeColor = System.Drawing.Color.White
-        Me.tsbReports.Image = Global.jade.My.Resources.Resources.finance_report_infographic_512
-        Me.tsbReports.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.tsbReports.Name = "tsbReports"
-        Me.tsbReports.Size = New System.Drawing.Size(60, 37)
-        Me.tsbReports.Text = "Reports"
-        Me.tsbReports.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.tsbReports.Visible = False
-        '
-        'TestToolStripMenuItem1
-        '
-        Me.TestToolStripMenuItem1.Name = "TestToolStripMenuItem1"
-        Me.TestToolStripMenuItem1.Size = New System.Drawing.Size(117, 22)
-        Me.TestToolStripMenuItem1.Text = "APV List"
-        '
-        'tsbPrevious
-        '
-        Me.tsbPrevious.AutoSize = False
-        Me.tsbPrevious.ForeColor = System.Drawing.Color.White
-        Me.tsbPrevious.Image = Global.jade.My.Resources.Resources.arrows_147746_960_720
-        Me.tsbPrevious.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.tsbPrevious.Name = "tsbPrevious"
-        Me.tsbPrevious.Size = New System.Drawing.Size(50, 35)
-        Me.tsbPrevious.Text = "Previous"
-        Me.tsbPrevious.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        '
-        'tsbNext
-        '
-        Me.tsbNext.AutoSize = False
-        Me.tsbNext.ForeColor = System.Drawing.Color.White
-        Me.tsbNext.Image = Global.jade.My.Resources.Resources.red_arrow_png_15
-        Me.tsbNext.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.tsbNext.Name = "tsbNext"
-        Me.tsbNext.Size = New System.Drawing.Size(50, 35)
-        Me.tsbNext.Text = "Next"
-        Me.tsbNext.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        '
-        'tsbClose
-        '
-        Me.tsbClose.AutoSize = False
-        Me.tsbClose.ForeColor = System.Drawing.Color.White
-        Me.tsbClose.Image = Global.jade.My.Resources.Resources.close_button_icon_transparent_background_247604
-        Me.tsbClose.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.tsbClose.Name = "tsbClose"
-        Me.tsbClose.Size = New System.Drawing.Size(50, 35)
-        Me.tsbClose.Text = "Close"
-        Me.tsbClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        '
-        'tsbExit
-        '
-        Me.tsbExit.AutoSize = False
-        Me.tsbExit.ForeColor = System.Drawing.Color.White
-        Me.tsbExit.Image = Global.jade.My.Resources.Resources.exit_button_icon_18
-        Me.tsbExit.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.tsbExit.Name = "tsbExit"
-        Me.tsbExit.Size = New System.Drawing.Size(50, 35)
-        Me.tsbExit.Text = "Exit"
-        Me.tsbExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.chBranchCode.HeaderText = "BranchCode"
+        Me.chBranchCode.Name = "chBranchCode"
         '
         'frmPJ
         '

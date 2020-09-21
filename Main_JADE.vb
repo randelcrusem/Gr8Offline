@@ -599,4 +599,8 @@ Public Class Main_JADE
     Private Sub MetroTile33_Click(sender As System.Object, e As System.EventArgs) Handles MetroTile33.Click
         frmSJ.Show()
     End Sub
+
+    Private Sub MetroTile34_Click(sender As System.Object, e As System.EventArgs) Handles MetroTile34.Click
+        frmAuditTrail.Show()
+    End Sub
 End Class

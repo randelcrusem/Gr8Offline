@@ -678,7 +678,7 @@
                         SQL.AddParam("@Particulars", "")
                     End If
                     If item.Cells(chCostID.Index).Value <> Nothing AndAlso item.Cells(chCostID.Index).Value <> "" Then
-                        SQL.AddParam("@CostCenter", item.Cells(chCostCenter.Index).Value.ToString)
+                        SQL.AddParam("@CostCenter", item.Cells(chCostID.Index).Value.ToString)
                     Else
                         SQL.AddParam("@CostCenter", "")
                     End If
@@ -1590,5 +1590,4 @@
             SaveError(ex.Message, ex.StackTrace, Me.Name.ToString, ModuleID)
         End Try
     End Sub
-
 End Class
