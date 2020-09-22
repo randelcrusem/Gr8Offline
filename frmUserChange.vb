@@ -14,12 +14,13 @@
             ElseIf txtNewPass.Text.Length < 6 Then
                 MsgBox("Password with less than 6 character is not acceptable, it is considered a weak password.", MsgBoxStyle.Exclamation)
             Else
+                Dim hash As String = BCrypt.Net.BCrypt.HashPassword(txtNewPass.Text, WorkFactor)
                 query = " UPDATE  tblUser" & _
                         " SET     Password = @Password,  FirstLogin = 0  " & _
                         " WHERE   UserID = @UserID  "
                 SQL.FlushParams()
                 SQL.AddParam("@UserID", lblUserID.Text)
-                SQL.AddParam("@Password", txtNewPass.Text)
+                SQL.AddParam("@Password", hash)
                 SQL.ExecNonQuery(query)
                 MsgBox("Password changed successfully!", MsgBoxStyle.Information)
                 Me.Close()

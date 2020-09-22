@@ -188,43 +188,56 @@ Public Class frmUserLogin
                     query = " SELECT  UserID, LoginName, Password, UserLevel, Status, FirstLogin, " & _
                             "         UserName AS Name " & _
                             " FROM    tblUser " & _
-                            " WHERE   LoginName = '" & txtUsername.Text & "' " & _
-                            " AND     Password = '" & txtPassword.Text & "'"
+                            " WHERE   LoginName = '" & txtUsername.Text & "' "
                     SQL.ReadQuery(query)
                     If SQL.SQLDR.Read Then
-                        If SQL.SQLDR("Status").ToString = "Locked" Then
-                            MsgBox("Account locked, Please try again or contact the administrator", MsgBoxStyle.Information)
-                            activityStatus = False
-                        Else
-                            If SQL.SQLDR("FirstLogin") = True Then
-                                MsgBox("Welcome! This is your first login, Please change your password", MsgBoxStyle.Information)
-                                frmUserChange.lblPassword.Text = SQL.SQLDR("Password").ToString
-                                frmUserChange.lblUserID.Text = SQL.SQLDR("UserID").ToString
-                                frmUserChange.txtUsername.Text = SQL.SQLDR("LoginName").ToString
-                                frmUserChange.ShowDialog()
+                        Dim hash As String = SQL.SQLDR("Password")
+                        If BCrypt.Net.BCrypt.Verify(txtPassword.Text, hash) Then
+                            If SQL.SQLDR("Status").ToString = "Locked" Then
+                                MsgBox("Account locked, Please try again or contact the administrator", MsgBoxStyle.Information)
+                                activityStatus = False
                             Else
-                                UserID = SQL.SQLDR("UserID").ToString
-                                UserName = SQL.SQLDR("LoginName").ToString
-                                Password = SQL.SQLDR("Password").ToString
-                                UserLevel = SQL.SQLDR("UserLevel").ToString
-                                Name = SQL.SQLDR("Name").ToString
-                                UpdateLastLogin(UserID)
-                                UpdateDefaultDB()
-                                If PatchUpdated() Then
-                                    BusinessType = getBusinessType()
-                                    BranchCode = getBranchCode()
-                                    If BusinessType = "" Then
-                                        frmOption.Show()
-                                    ElseIf BranchCode = "" Then
-                                        frmOption.Show()
-                                    Else
-                                        Main_JADE.Show()
-                                    End If
-                                    Me.Hide()
+                                If SQL.SQLDR("FirstLogin") = True Then
+                                    MsgBox("Welcome! This is your first login, Please change your password", MsgBoxStyle.Information)
+                                    frmUserChange.lblPassword.Text = SQL.SQLDR("Password").ToString
+                                    frmUserChange.lblUserID.Text = SQL.SQLDR("UserID").ToString
+                                    frmUserChange.txtUsername.Text = SQL.SQLDR("LoginName").ToString
+                                    frmUserChange.ShowDialog()
                                 Else
-                                    System.Diagnostics.Process.Start(App_Path & "\FTPUpdate.exe")
+                                    UserID = SQL.SQLDR("UserID").ToString
+                                    UserName = SQL.SQLDR("LoginName").ToString
+                                    Password = SQL.SQLDR("Password").ToString
+                                    UserLevel = SQL.SQLDR("UserLevel").ToString
+                                    Name = SQL.SQLDR("Name").ToString
+                                    UpdateLastLogin(UserID)
+                                    UpdateDefaultDB()
+                                    If PatchUpdated() Then
+                                        BusinessType = getBusinessType()
+                                        BranchCode = getBranchCode()
+                                        If BusinessType = "" Then
+                                            frmOption.Show()
+                                        ElseIf BranchCode = "" Then
+                                            frmOption.Show()
+                                        Else
+                                            Main_JADE.Show()
+                                        End If
+                                        Me.Hide()
+                                    Else
+                                        System.Diagnostics.Process.Start(App_Path & "\FTPUpdate.exe")
+                                    End If
                                 End If
                             End If
+                        Else
+                            If counter = 3 Then
+                                Msg("Invalid Username or password. This is your 3rd attempt to login " & vbNewLine & "Kindly contact your system administrator. The program will now close.", MsgBoxStyle.Exclamation)
+                                Application.Exit()
+                            End If
+                            Msg("Invalid Username or Password!", MsgBoxStyle.Information)
+                            txtUsername.Text = ""
+                            txtPassword.Text = ""
+                            txtUsername.Focus()
+                            activityStatus = False
+                            counter += 1
                         End If
                     Else
                         If counter = 3 Then

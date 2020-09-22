@@ -87,6 +87,9 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BCrypt.Net">
+      <HintPath>packages\BCrypt-Official.0.1.109\lib\BCrypt.Net.dll</HintPath>
+    </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\Windows\assembly\GAC_MSIL\CrystalDecisions.CrystalReports.Engine\13.0.3500.0__692fbea5521e1304\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
@@ -1400,6 +1403,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Resources\orange-3d-background.png" />
   </ItemGroup>
   <ItemGroup>
@@ -1408,6 +1412,7 @@
   <ItemGroup>
     <Content Include="gr8-logo-orig.ico" />
     <Content Include="Jade.ico" />
+    <Content Include="LICENSE.txt" />
     <None Include="Resources\118474274_1485269764997240_8373823567553110929_n.png" />
     <None Include="Resources\add-icon.png" />
     <None Include="Resources\dd4c591c.png" />
