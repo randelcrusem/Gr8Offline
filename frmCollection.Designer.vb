@@ -31,11 +31,11 @@ Partial Class frmCollection
         Me.Label2 = New System.Windows.Forms.Label()
         Me.cmdCancel = New System.Windows.Forms.Button()
         Me.lvctrlist = New System.Windows.Forms.ListView()
-        Me.ColumnHeader19 = CType(New System.Windows.Forms.ColumnHeader(),System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader20 = CType(New System.Windows.Forms.ColumnHeader(),System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader9 = CType(New System.Windows.Forms.ColumnHeader(),System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader10 = CType(New System.Windows.Forms.ColumnHeader(),System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader48 = CType(New System.Windows.Forms.ColumnHeader(),System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader19 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader20 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader9 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader10 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader48 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.tcCollection = New System.Windows.Forms.TabControl()
         Me.tpCollection = New System.Windows.Forms.TabPage()
         Me.dgvEntry = New System.Windows.Forms.DataGridView()
@@ -87,6 +87,7 @@ Partial Class frmCollection
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.tsbCopy = New System.Windows.Forms.ToolStripDropDownButton()
         Me.tsbCopyPO = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FromCAToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
         Me.tsbPrint = New System.Windows.Forms.ToolStripButton()
@@ -111,6 +112,8 @@ Partial Class frmCollection
         Me.dtpDate = New System.Windows.Forms.DateTimePicker()
         Me.txtTransNum = New System.Windows.Forms.TextBox()
         Me.btnTypeMaintenance = New System.Windows.Forms.Button()
+        Me.txtCARef = New System.Windows.Forms.TextBox()
+        Me.Label32 = New System.Windows.Forms.Label()
         Me.tcCollection.SuspendLayout()
         Me.tpCollection.SuspendLayout()
         CType(Me.dgvEntry, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -672,7 +675,7 @@ Partial Class frmCollection
         '
         'tsbCopy
         '
-        Me.tsbCopy.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbCopyPO})
+        Me.tsbCopy.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbCopyPO, Me.FromCAToolStripMenuItem})
         Me.tsbCopy.ForeColor = System.Drawing.Color.White
         Me.tsbCopy.Image = Global.jade.My.Resources.Resources.finance_report_infographic_512
         Me.tsbCopy.ImageTransparentColor = System.Drawing.Color.Magenta
@@ -686,6 +689,12 @@ Partial Class frmCollection
         Me.tsbCopyPO.Name = "tsbCopyPO"
         Me.tsbCopyPO.Size = New System.Drawing.Size(152, 22)
         Me.tsbCopyPO.Text = "From SI"
+        '
+        'FromCAToolStripMenuItem
+        '
+        Me.FromCAToolStripMenuItem.Name = "FromCAToolStripMenuItem"
+        Me.FromCAToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.FromCAToolStripMenuItem.Text = "From CA"
         '
         'ToolStripButton1
         '
@@ -790,6 +799,8 @@ Partial Class frmCollection
         '
         Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.Controls.Add(Me.txtCARef)
+        Me.GroupBox1.Controls.Add(Me.Label32)
         Me.GroupBox1.Controls.Add(Me.cbCollectionCompany)
         Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.txtAPVRef)
@@ -849,7 +860,7 @@ Partial Class frmCollection
         Me.txtAPVRef.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtAPVRef.Enabled = False
         Me.txtAPVRef.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAPVRef.Location = New System.Drawing.Point(818, 91)
+        Me.txtAPVRef.Location = New System.Drawing.Point(818, 92)
         Me.txtAPVRef.Name = "txtAPVRef"
         Me.txtAPVRef.Size = New System.Drawing.Size(132, 22)
         Me.txtAPVRef.TabIndex = 1377
@@ -860,7 +871,7 @@ Partial Class frmCollection
         Me.Label6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Arial", 9.75!)
-        Me.Label6.Location = New System.Drawing.Point(757, 93)
+        Me.Label6.Location = New System.Drawing.Point(757, 94)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(55, 16)
         Me.Label6.TabIndex = 1378
@@ -947,6 +958,28 @@ Partial Class frmCollection
         Me.btnTypeMaintenance.TabIndex = 1355
         Me.btnTypeMaintenance.Text = ">>"
         Me.btnTypeMaintenance.UseVisualStyleBackColor = True
+        '
+        'txtCARef
+        '
+        Me.txtCARef.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtCARef.Enabled = False
+        Me.txtCARef.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCARef.Location = New System.Drawing.Point(818, 118)
+        Me.txtCARef.Name = "txtCARef"
+        Me.txtCARef.Size = New System.Drawing.Size(132, 22)
+        Me.txtCARef.TabIndex = 1381
+        Me.txtCARef.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label32
+        '
+        Me.Label32.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label32.AutoSize = True
+        Me.Label32.Font = New System.Drawing.Font("Arial", 9.75!)
+        Me.Label32.Location = New System.Drawing.Point(756, 121)
+        Me.Label32.Name = "Label32"
+        Me.Label32.Size = New System.Drawing.Size(60, 16)
+        Me.Label32.TabIndex = 1382
+        Me.Label32.Text = "CA Ref. :"
         '
         'frmCollection
         '
@@ -1071,4 +1104,7 @@ Partial Class frmCollection
     Friend WithEvents tsbDelete As System.Windows.Forms.ToolStripButton
     Friend WithEvents cbCollectionCompany As System.Windows.Forms.ComboBox
     Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents FromCAToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents txtCARef As System.Windows.Forms.TextBox
+    Friend WithEvents Label32 As System.Windows.Forms.Label
 End Class
