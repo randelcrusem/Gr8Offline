@@ -244,7 +244,6 @@ Public Class Main_JADE
         End With
 
         mtcMenu.SelectedTab = MetroHomeTab
-
     End Sub
 
     Private Sub MetroTile8_Click(sender As System.Object, e As System.EventArgs) Handles tilePurchaseRequisition.Click
@@ -599,4 +598,5 @@ Public Class Main_JADE
     Private Sub MetroTile33_Click(sender As System.Object, e As System.EventArgs) Handles MetroTile33.Click
         frmSJ.Show()
     End Sub
+
 End Class

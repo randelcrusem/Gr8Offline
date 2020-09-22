@@ -6,6 +6,11 @@ bin/Debug/*
 
 [Oo]bj/
 
+*.suo
+
+*.accdb
+*.laccdb
+
 # Files built by Visual Studio
 *_i.c
 *_p.c
