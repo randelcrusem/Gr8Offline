@@ -87,6 +87,9 @@ Partial Class frmJV
         Me.txtTransNum = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.txtStatus = New System.Windows.Forms.TextBox()
+        Me.FromCAToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.txtCARef = New System.Windows.Forms.TextBox()
+        Me.Label32 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.dgvEntry, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -99,7 +102,7 @@ Partial Class frmJV
         Me.lblTotal.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lblTotal.AutoSize = True
         Me.lblTotal.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTotal.Location = New System.Drawing.Point(250, 352)
+        Me.lblTotal.Location = New System.Drawing.Point(250, 338)
         Me.lblTotal.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTotal.Name = "lblTotal"
         Me.lblTotal.Size = New System.Drawing.Size(39, 16)
@@ -110,7 +113,7 @@ Partial Class frmJV
         '
         Me.txtDebit.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.txtDebit.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDebit.Location = New System.Drawing.Point(297, 352)
+        Me.txtDebit.Location = New System.Drawing.Point(297, 338)
         Me.txtDebit.Margin = New System.Windows.Forms.Padding(4)
         Me.txtDebit.Name = "txtDebit"
         Me.txtDebit.Size = New System.Drawing.Size(96, 22)
@@ -120,7 +123,7 @@ Partial Class frmJV
         '
         Me.txtCredit.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.txtCredit.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCredit.Location = New System.Drawing.Point(399, 352)
+        Me.txtCredit.Location = New System.Drawing.Point(399, 338)
         Me.txtCredit.Margin = New System.Windows.Forms.Padding(4)
         Me.txtCredit.Name = "txtCredit"
         Me.txtCredit.Size = New System.Drawing.Size(96, 22)
@@ -132,11 +135,11 @@ Partial Class frmJV
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Location = New System.Drawing.Point(0, 179)
+        Me.TabControl1.Location = New System.Drawing.Point(0, 193)
         Me.TabControl1.Margin = New System.Windows.Forms.Padding(4)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(1139, 406)
+        Me.TabControl1.Size = New System.Drawing.Size(1139, 392)
         Me.TabControl1.TabIndex = 102
         '
         'TabPage1
@@ -150,7 +153,7 @@ Partial Class frmJV
         Me.TabPage1.Margin = New System.Windows.Forms.Padding(4)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(4)
-        Me.TabPage1.Size = New System.Drawing.Size(1131, 378)
+        Me.TabPage1.Size = New System.Drawing.Size(1131, 364)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Journal Details"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -164,7 +167,7 @@ Partial Class frmJV
         Me.dgvEntry.Location = New System.Drawing.Point(4, 7)
         Me.dgvEntry.Margin = New System.Windows.Forms.Padding(4)
         Me.dgvEntry.Name = "dgvEntry"
-        Me.dgvEntry.Size = New System.Drawing.Size(1125, 338)
+        Me.dgvEntry.Size = New System.Drawing.Size(1125, 324)
         Me.dgvEntry.TabIndex = 1304
         '
         'chAccntCode
@@ -259,7 +262,7 @@ Partial Class frmJV
         '
         Me.txtDifference.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.txtDifference.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDifference.Location = New System.Drawing.Point(501, 352)
+        Me.txtDifference.Location = New System.Drawing.Point(501, 338)
         Me.txtDifference.Margin = New System.Windows.Forms.Padding(4)
         Me.txtDifference.Name = "txtDifference"
         Me.txtDifference.Size = New System.Drawing.Size(96, 22)
@@ -387,7 +390,7 @@ Partial Class frmJV
         '
         'tsbCopy
         '
-        Me.tsbCopy.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbCopyPO, Me.FromLoansToolStripMenuItem, Me.FromFundsToolStripMenuItem, Me.FromSavingsToolStripMenuItem, Me.FromMemberToolStripMenuItem})
+        Me.tsbCopy.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbCopyPO, Me.FromLoansToolStripMenuItem, Me.FromFundsToolStripMenuItem, Me.FromSavingsToolStripMenuItem, Me.FromMemberToolStripMenuItem, Me.FromCAToolStripMenuItem})
         Me.tsbCopy.ForeColor = System.Drawing.Color.White
         Me.tsbCopy.Image = Global.jade.My.Resources.Resources.finance_report_infographic_512
         Me.tsbCopy.ImageTransparentColor = System.Drawing.Color.Magenta
@@ -519,6 +522,8 @@ Partial Class frmJV
         '
         Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.Controls.Add(Me.txtCARef)
+        Me.GroupBox1.Controls.Add(Me.Label32)
         Me.GroupBox1.Controls.Add(Me.txtLoanRef)
         Me.GroupBox1.Controls.Add(Me.Label31)
         Me.GroupBox1.Controls.Add(Me.Label16)
@@ -536,7 +541,7 @@ Partial Class frmJV
         Me.GroupBox1.Controls.Add(Me.lblRemarks)
         Me.GroupBox1.Location = New System.Drawing.Point(8, 40)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(1126, 132)
+        Me.GroupBox1.Size = New System.Drawing.Size(1126, 155)
         Me.GroupBox1.TabIndex = 1345
         Me.GroupBox1.TabStop = False
         '
@@ -545,7 +550,7 @@ Partial Class frmJV
         Me.txtLoanRef.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtLoanRef.Enabled = False
         Me.txtLoanRef.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtLoanRef.Location = New System.Drawing.Point(986, 100)
+        Me.txtLoanRef.Location = New System.Drawing.Point(986, 98)
         Me.txtLoanRef.Name = "txtLoanRef"
         Me.txtLoanRef.Size = New System.Drawing.Size(132, 22)
         Me.txtLoanRef.TabIndex = 1374
@@ -556,7 +561,7 @@ Partial Class frmJV
         Me.Label31.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label31.AutoSize = True
         Me.Label31.Font = New System.Drawing.Font("Arial", 9.75!)
-        Me.Label31.Location = New System.Drawing.Point(913, 103)
+        Me.Label31.Location = New System.Drawing.Point(913, 101)
         Me.Label31.Name = "Label31"
         Me.Label31.Size = New System.Drawing.Size(71, 16)
         Me.Label31.TabIndex = 1375
@@ -677,6 +682,34 @@ Partial Class frmJV
         Me.txtStatus.TabIndex = 1367
         Me.txtStatus.Text = "Open"
         '
+        'FromCAToolStripMenuItem
+        '
+        Me.FromCAToolStripMenuItem.Name = "FromCAToolStripMenuItem"
+        Me.FromCAToolStripMenuItem.Size = New System.Drawing.Size(163, 22)
+        Me.FromCAToolStripMenuItem.Text = "From CA"
+        '
+        'txtCARef
+        '
+        Me.txtCARef.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtCARef.Enabled = False
+        Me.txtCARef.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCARef.Location = New System.Drawing.Point(986, 124)
+        Me.txtCARef.Name = "txtCARef"
+        Me.txtCARef.Size = New System.Drawing.Size(132, 22)
+        Me.txtCARef.TabIndex = 1377
+        Me.txtCARef.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label32
+        '
+        Me.Label32.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label32.AutoSize = True
+        Me.Label32.Font = New System.Drawing.Font("Arial", 9.75!)
+        Me.Label32.Location = New System.Drawing.Point(924, 127)
+        Me.Label32.Name = "Label32"
+        Me.Label32.Size = New System.Drawing.Size(60, 16)
+        Me.Label32.TabIndex = 1378
+        Me.Label32.Text = "CA Ref. :"
+        '
         'frmJV
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -698,16 +731,16 @@ Partial Class frmJV
         Me.Text = "Journal Voucher"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.TabControl1.ResumeLayout(False)
-        Me.TabPage1.ResumeLayout(false)
-        Me.TabPage1.PerformLayout
-        CType(Me.dgvEntry,System.ComponentModel.ISupportInitialize).EndInit
-        Me.ToolStrip1.ResumeLayout(false)
-        Me.ToolStrip1.PerformLayout
-        Me.GroupBox1.ResumeLayout(false)
-        Me.GroupBox1.PerformLayout
-        Me.ResumeLayout(false)
+        Me.TabPage1.ResumeLayout(False)
+        Me.TabPage1.PerformLayout()
+        CType(Me.dgvEntry, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ToolStrip1.ResumeLayout(False)
+        Me.ToolStrip1.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        Me.ResumeLayout(False)
 
-End Sub
+    End Sub
     Friend WithEvents lblTotal As System.Windows.Forms.Label
     Friend WithEvents txtDebit As System.Windows.Forms.TextBox
     Friend WithEvents txtCredit As System.Windows.Forms.TextBox
@@ -769,4 +802,7 @@ End Sub
     Friend WithEvents chCIP_Code As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents chCIP_Desc As System.Windows.Forms.DataGridViewComboBoxColumn
     Friend WithEvents chBranchCode As System.Windows.Forms.DataGridViewComboBoxColumn
+    Friend WithEvents FromCAToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents txtCARef As System.Windows.Forms.TextBox
+    Friend WithEvents Label32 As System.Windows.Forms.Label
 End Class

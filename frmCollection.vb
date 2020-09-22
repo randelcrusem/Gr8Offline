@@ -9,7 +9,7 @@
     Dim DBTable As String = "tblCollection"
     Dim TransAuto As Boolean
     Dim AccntCode As String
-    Dim bankID As Integer
+    Dim bankID, CA_ID As Integer
     Dim SI_ID As Integer
 
 
@@ -538,6 +538,11 @@
                     line += 1
                 End If
             Next
+            If CA_ID > 0 Then
+                Dim updateSQL As String
+                updateSQL = " UPDATE tblCA SET Status ='Closed' WHERE TransID = '" & CA_ID & "'"
+                SQL.ExecNonQuery(updateSQL)
+            End If
         Catch ex As Exception
             activityStatus = False
             SaveError(ex.Message, ex.StackTrace, Me.Name.ToString, TransType)
@@ -775,7 +780,7 @@
 
     Private Sub tsbSave_Click(sender As System.Object, e As System.EventArgs) Handles tsbSave.Click
         If txtVCECode.Text = "" Then
-            Msg("Please enter VCECode and VCEName!", MsgBoxStyle.Exclamation)
+            Msg("Please enter VCECode!", MsgBoxStyle.Exclamation)
         ElseIf txtRemarks.Text = "" Then
             MsgBox("Please enter a remark/short explanation", MsgBoxStyle.Exclamation)
         ElseIf txtTotalDebit.Text <> txtTotalCredit.Text Then
@@ -1163,7 +1168,39 @@
         End If
     End Sub
 
-    Private Sub tsbPrint_Click(sender As System.Object, e As System.EventArgs) Handles tsbPrint.Click
+    Private Sub LoadCA(ByVal CA As String)
+        Try
+            Dim query As String
+            query = " SELECT TransID, CA_No,  tblCA.VCECode, VCEName, DateCA AS DateCA, Amount AS Net_Purchase, Remarks,  AccntCode, AccountTitle " & _
+                    " FROM   tblCA INNER JOIN viewVCE_Master " & _
+                    " ON     tblCA.VCECode = viewVCE_Master.VCECode " & _
+                    " INNER JOIN tblCOA_Master " & _
+                    " ON     tblCA.AccntCode = tblCOA_Master.AccountCode " & _
+                    " WHERE  TransID ='" & CA & "' "
+            SQL.ReadQuery(query)
+            If SQL.SQLDR.Read Then
+                CA_ID = SQL.SQLDR("TransID")
+                txtCARef.Text = SQL.SQLDR("CA_No")
+                txtVCECode.Text = SQL.SQLDR("VCECode").ToString
+                txtVCEName.Text = SQL.SQLDR("VCEName").ToString
+                dgvEntry.Rows.Add(SQL.SQLDR("AccntCode").ToString, SQL.SQLDR("AccountTitle").ToString, "0.00", CDec(SQL.SQLDR("Net_Purchase")).ToString("N2"),
+                                  SQL.SQLDR("VCECode").ToString, SQL.SQLDR("VCEName").ToString, "", "CA:" & SQL.SQLDR("CA_No").ToString)
+            End If
+            TotalDBCR()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
 
+    Private Sub FromCAToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FromCAToolStripMenuItem.Click
+        Dim f As New frmLoadTransactions
+        f.cbFilter.SelectedItem = "Status"
+        f.txtFilter.Text = "Active"
+        f.txtFilter.Enabled = False
+        f.cbFilter.Enabled = False
+        f.btnSearch.Enabled = False
+        f.ShowDialog("CA")
+        LoadCA(f.transID)
+        f.Dispose()
     End Sub
 End Class
