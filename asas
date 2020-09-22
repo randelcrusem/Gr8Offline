@@ -1,0 +1,104 @@
+[33mcommit 8d19f872e1d76810e8a229c3ddf56bd41b61f1be[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: warlon012 <warlon012@gmail.com>
+Date:   Tue Sep 22 10:28:05 2020 +0800
+
+    Add Obj files i Gitignore
+
+[33mcommit 93d44264ab2566a1955624790f6d05f5d98a14ef[m
+Author: warlon012 <warlon012@gmail.com>
+Date:   Mon Sep 21 17:27:13 2020 +0800
+
+    Added password encryption using BCrypt
+
+[33mcommit 9d5af90f51196744a9debf84a2b7be77e1ebc7d4[m
+Author: warlon012 <warlon012@gmail.com>
+Date:   Fri Sep 18 10:08:22 2020 +0800
+
+    added access file and .suo file in gitignore
+
+[33mcommit 4f69fc2affcd121bf717f0b4faedaa8a65b6d048[m
+Author: warlon012 <warlon012@gmail.com>
+Date:   Wed Sep 16 18:09:24 2020 +0800
+
+    removed debug files on tracking
+
+[33mcommit ace5623892aaab7aa6774e55f9b75a03113b3bef[m
+Author: warlon012 <warlon012@gmail.com>
+Date:   Wed Sep 16 18:01:09 2020 +0800
+
+    final changes in gitignore
+
+[33mcommit 510ac37ff3b4d3331e50ec446b2613ef8fb23b90[m
+Author: warlon012 <warlon012@gmail.com>
+Date:   Wed Sep 16 17:57:44 2020 +0800
+
+    Updated again the gitignore
+
+[33mcommit 93afc2900ef927b9377438f05227a2fafe6106ec[m
+Author: warlon012 <warlon012@gmail.com>
+Date:   Wed Sep 16 17:50:27 2020 +0800
+
+    Updated gitignore
+
+[33mcommit b055ba27310d3caf04e070ad51f75e0d099f213b[m
+Merge: 304adb3 ef67863
+Author: warlon012 <warlon012@gmail.com>
+Date:   Wed Sep 16 17:35:46 2020 +0800
+
+    Merge branch 'master' of https://github.com/warlon012/Gr8Offline into master
+    
+    # Conflicts:
+    #       bin/Debug/aa/jade.resources.dll
+    #       bin/Debug/jade.application
+    #       bin/Debug/jade.exe
+    #       bin/Debug/jade.exe.manifest
+    #       bin/Debug/jade.pdb
+    #       obj/x86/Debug/JADE.vbproj.FileListAbsolute.txt
+    #       obj/x86/Debug/JADE.vbproj.GenerateResource.Cache
+    #       obj/x86/Debug/aa/jade.resources.dll
+    #       obj/x86/Debug/jade.application
+    #       obj/x86/Debug/jade.exe
+    #       obj/x86/Debug/jade.exe.manifest
+    #       obj/x86/Debug/jade.pdb
+
+[33mcommit 304adb3fa5d7136e1ee2522a6cbfd4a6c11b309a[m
+Author: warlon012 <warlon012@gmail.com>
+Date:   Wed Sep 16 16:26:38 2020 +0800
+
+    changes in gitignore
+
+[33mcommit ef67863b9d317e59dac78ca48abdb234e7ce80c0[m
+Merge: f5f07a0 086d948
+Author: warlon012 <warlon012@users.noreply.github.com>
+Date:   Wed Sep 16 16:19:57 2020 +0800
+
+    Merge pull request #1 from randelcrusem/master
+    
+    Changes in frmCollection.vb
+
+[33mcommit 086d948d8ec3bdc0ca0d17750afa88bc7e36c0cf[m
+Author: Randel Crusem <randelcrusem@gmail.com>
+Date:   Wed Sep 16 12:03:18 2020 +0800
+
+    updated msg status frm.Collection.vb
+
+[33mcommit 1f55c8a18936dcd44f90444c4c77204c53a6dedf[m
+Merge: f22754a f5f07a0
+Author: randelcrusem <44955785+randelcrusem@users.noreply.github.com>
+Date:   Wed Sep 16 11:48:20 2020 +0800
+
+    Merge pull request #1 from warlon012/master
+    
+    Removed gitignore items to add all files to repo
+
+[33mcommit f5f07a0aa9d2c8ddf7122407b94b705d920da6e6[m
+Author: warlon012 <warlon012@gmail.com>
+Date:   Wed Sep 16 11:13:26 2020 +0800
+
+    Removed gitignore items to add all files to repo
+
+[33mcommit f22754a1b71f727334f6ebaad4112ce9d97f9339[m
+Author: WarlonEscander <warlon012@gmail.com>
+Date:   Wed Sep 16 10:16:16 2020 +0800
+
+    Initial Commit
